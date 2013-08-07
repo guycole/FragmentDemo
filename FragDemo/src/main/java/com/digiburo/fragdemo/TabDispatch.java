@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 
+import com.digiburo.fragdemo.R;
+
 /**
  *
  */
