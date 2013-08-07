@@ -1,4 +1,4 @@
 FragmentDemo
 ============
 
-Android Fragment Demonstration
+Android Fragment Demonstration w/Maven
