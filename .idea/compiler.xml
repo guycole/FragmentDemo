@@ -5,6 +5,8 @@
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/FragDemo/target/generated-sources/r" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/FragDemo/target/generated-sources/aidl" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/FragmentDemo/target/generated-sources/r" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/FragmentDemo/target/generated-sources/aidl" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
@@ -26,6 +28,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="FragDemo" />
         <module name="FragmentDemo" />
       </profile>
     </annotationProcessing>

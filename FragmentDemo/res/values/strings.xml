@@ -5,8 +5,25 @@
   <string name="action_settings">Settings</string>
   <string name="hello_world">Hello world!</string>
 
+  <string name="about_label_board">Device Board</string>
+  <string name="about_label_brand">Device Brand</string>
+  <string name="about_label_name">Device Name</string>
+  <string name="about_label_manufacturer">Device Manufacturer</string>
+  <string name="about_label_model">Device Model</string>
+  <string name="about_label_product">Device Product</string>
+  <string name="about_label_unknown">Unknown</string>
+
+  <string name="label_fragment_one">Fragment One</string>
+  <string name="label_fragment_two">Fragment Two</string>
+  <string name="label_fragment_three">Fragment Three</string>
+  <string name="label_fragment_four">Fragment Four</string>
+
+  <string name="label_no_rows">No Rows</string>
+
   <string name="menu_application_bar_one">One</string>
   <string name="menu_application_bar_two">Two</string>
   <string name="menu_application_bar_three">Three</string>
   <string name="menu_application_bar_four">Four</string>
+
+  <string name="menu_context_delete">Delete</string>
 </resources>

@@ -8,7 +8,7 @@ import android.app.FragmentTransaction;
 import com.digiburo.fragdemo.R;
 
 /**
- *
+ * React to ActionBar tab events
  */
 public class TabDispatch implements ActionBar.TabListener {
 
@@ -20,18 +20,64 @@ public class TabDispatch implements ActionBar.TabListener {
     fourFragment = (FourFragment) Fragment.instantiate(mainActivity, FourFragment.class.getName());
   }
 
+  @Override
   public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
     LogFacade.entry(LOG_TAG, "onTabSelected:" + tab.getTag());
+
+    if (tab.getTag().equals(TAG_ONE)) {
+      ft.add(R.id.layoutFragment01, oneFragment, TAG_ONE);
+      ft.attach(oneFragment);
+    } else if (tab.getTag().equals(TAG_TWO)) {
+      ft.add(R.id.layoutFragment01, twoFragment, TAG_TWO);
+      ft.attach(twoFragment);
+    } else if (tab.getTag().equals(TAG_THREE)) {
+      ft.add(R.id.layoutFragment01, threeFragment, TAG_THREE);
+      ft.attach(threeFragment);
+    } else if (tab.getTag().equals(TAG_FOUR)) {
+      ft.add(R.id.layoutFragment01, fourFragment, TAG_FOUR);
+      ft.attach(fourFragment);
+    } else {
+      throw new IllegalArgumentException("unknown tab:" + tab.getTag());
+    }
+
     LogFacade.exit(LOG_TAG, "onTabSelected:" + tab.getTag());
   }
 
+  @Override
   public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
     LogFacade.entry(LOG_TAG, "onTabUnselected:" + tab.getTag());
+
+    if (tab.getTag().equals(TAG_ONE)) {
+      ft.detach(oneFragment);
+    } else if (tab.getTag().equals(TAG_TWO)) {
+      ft.detach(twoFragment);
+    } else if (tab.getTag().equals(TAG_THREE)) {
+      ft.detach(threeFragment);
+    } else if (tab.getTag().equals(TAG_FOUR)) {
+      ft.detach(fourFragment);
+    } else {
+      throw new IllegalArgumentException("unknown tab:" + tab.getTag());
+    }
+
     LogFacade.exit(LOG_TAG, "onTabUnselected:" + tab.getTag());
   }
 
+  @Override
   public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
     LogFacade.entry(LOG_TAG, "onTabReselected:" + tab.getTag());
+
+    if (tab.getTag().equals(TAG_ONE)) {
+      //empty
+    } else if (tab.getTag().equals(TAG_TWO)) {
+      //empty
+    } else if (tab.getTag().equals(TAG_THREE)) {
+      //empty
+    } else if (tab.getTag().equals(TAG_FOUR)) {
+      //empty
+    } else {
+      throw new IllegalArgumentException("unknown tab:" + tab.getTag());
+    }
+
     LogFacade.exit(LOG_TAG, "onTabReselected:" + tab.getTag());
   }
 
@@ -63,7 +109,7 @@ public class TabDispatch implements ActionBar.TabListener {
 
     fourTab = actionBar.newTab();
     fourTab.setTabListener(this);
-    fourTab.setTag(TAG_THREE);
+    fourTab.setTag(TAG_FOUR);
     fourTab.setText(R.string.menu_application_bar_four);
     actionBar.addTab(fourTab);
 

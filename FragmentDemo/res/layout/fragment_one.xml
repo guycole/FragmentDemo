@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:stretchColumns="1">
+
+    <TableRow android:layout_marginBottom="7dp" >
+      <TextView android:text="@string/about_label_board"/>
+      <TextView android:id="@+id/about_board01" android:text="@string/about_label_unknown"/>
+    </TableRow>
+
+    <TableRow android:layout_marginBottom="7dp" >
+      <TextView android:text="@string/about_label_brand"/>
+      <TextView android:id="@+id/about_brand01" android:text="@string/about_label_unknown"/>
+    </TableRow>
+
+    <TableRow android:layout_marginBottom="7dp" >
+      <TextView android:text="@string/about_label_name"/>
+      <TextView android:id="@+id/about_name01" android:text="@string/about_label_unknown"/>
+    </TableRow>
+
+    <TableRow android:layout_marginBottom="7dp" >
+      <TextView android:text="@string/about_label_manufacturer"/>
+      <TextView android:id="@+id/about_manufacturer01" android:text="@string/about_label_unknown"/>
+    </TableRow>
+
+    <TableRow android:layout_marginBottom="7dp" >
+      <TextView android:text="@string/about_label_model"/>
+      <TextView android:id="@+id/about_model01" android:text="@string/about_label_unknown"/>
+    </TableRow>
+
+    <TableRow android:layout_marginBottom="7dp" >
+      <TextView android:text="@string/about_label_product"/>
+      <TextView android:id="@+id/about_product01" android:text="@string/about_label_unknown"/>
+    </TableRow>
+  </TableLayout>
+</LinearLayout>
