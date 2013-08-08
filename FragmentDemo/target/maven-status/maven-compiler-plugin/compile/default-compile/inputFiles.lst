@@ -1,4 +1,3 @@
-/Users/guycole/AndroidStudioProjects/FragmentDemo/FragmentDemo/target/generated-sources/r/com/digiburo/fragdemo/Manifest.java
 /Users/guycole/AndroidStudioProjects/FragmentDemo/FragmentDemo/src/main/java/com/digiburo/fragdemo/FourFragment.java
 /Users/guycole/AndroidStudioProjects/FragmentDemo/FragmentDemo/src/main/java/com/digiburo/fragdemo/ThreeFragment.java
 /Users/guycole/AndroidStudioProjects/FragmentDemo/FragmentDemo/target/generated-sources/r/com/digiburo/fragdemo/BuildConfig.java
@@ -10,3 +9,4 @@
 /Users/guycole/AndroidStudioProjects/FragmentDemo/FragmentDemo/src/main/java/com/digiburo/fragdemo/FragDemoApplication.java
 /Users/guycole/AndroidStudioProjects/FragmentDemo/FragmentDemo/src/main/java/com/digiburo/fragdemo/OneFragment.java
 /Users/guycole/AndroidStudioProjects/FragmentDemo/FragmentDemo/src/main/java/com/digiburo/fragdemo/TabDispatch.java
+/Users/guycole/AndroidStudioProjects/FragmentDemo/FragmentDemo/src/main/java/com/digiburo/fragdemo/CustomArrayAdapter.java

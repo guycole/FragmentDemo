@@ -40,7 +40,7 @@ public class ThreeFragment extends ListFragment {
    */
   @Override
   public void onListItemClick(ListView listView, View view, int position, long id) {
-    LogFacade.debug(LOG_TAG, "click:" + position + ":" + id);
+    LogFacade.entry(LOG_TAG, "click:" + position + ":" + id);
   }
 
   /**
@@ -67,13 +67,13 @@ public class ThreeFragment extends ListFragment {
   @Override
   public void onAttach(Activity activity) {
     super.onAttach(activity);
-    LogFacade.debug(LOG_TAG, "onAttach");
+    LogFacade.entry(LOG_TAG, "onAttach");
   }
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    LogFacade.debug(LOG_TAG, "onCreate");
+    LogFacade.entry(LOG_TAG, "onCreate");
 
     //
     ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.us_states, android.R.layout.simple_list_item_1);
@@ -89,7 +89,7 @@ public class ThreeFragment extends ListFragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     super.onCreateView(inflater, container, savedInstanceState);
-    LogFacade.debug(LOG_TAG, "onCreateView");
+    LogFacade.entry(LOG_TAG, "onCreateView");
 
     footerView = inflater.inflate(R.layout.footer_three, null);
     headerView = inflater.inflate(R.layout.header_three, null);
@@ -101,13 +101,16 @@ public class ThreeFragment extends ListFragment {
   @Override
   public void onActivityCreated(Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
-    LogFacade.debug(LOG_TAG, "onActivityCreated");
+    LogFacade.entry(LOG_TAG, "onActivityCreated");
 
-    if (needDecorationFlag) {
+ //   if (needDecorationFlag) {
+      LogFacade.debug(LOG_TAG, "decoration flag true");
       needDecorationFlag = false;
       getListView().addFooterView(footerView);
       getListView().addHeaderView(headerView);
-    }
+ //   } else {
+ //     LogFacade.debug(LOG_TAG, "decoration flag false");
+ //   }
 
     setListAdapter(customArrayAdapter);
 
@@ -117,43 +120,44 @@ public class ThreeFragment extends ListFragment {
   @Override
   public void onStart() {
     super.onStart();
-    LogFacade.debug(LOG_TAG, "onStart");
+    LogFacade.entry(LOG_TAG, "onStart");
   }
 
   @Override
   public void onResume() {
     super.onResume();
-    LogFacade.debug(LOG_TAG, "onResume");
+    LogFacade.entry(LOG_TAG, "onResume");
   }
 
   @Override
   public void onPause() {
     super.onPause();
-    LogFacade.debug(LOG_TAG, "onPause");
+    LogFacade.entry(LOG_TAG, "onPause");
   }
 
   @Override
   public void onStop() {
     super.onStop();
-    LogFacade.debug(LOG_TAG, "onStop");
+    LogFacade.entry(LOG_TAG, "onStop");
   }
 
   @Override
   public void onDestroyView() {
     super.onDestroyView();
-    LogFacade.debug(LOG_TAG, "onDestroyView");
+    LogFacade.entry(LOG_TAG, "onDestroyView");
+    setListAdapter(null);
   }
 
   @Override
   public void onDestroy() {
     super.onDestroy();
-    LogFacade.debug(LOG_TAG, "onDestroy");
+    LogFacade.entry(LOG_TAG, "onDestroy");
   }
 
   @Override
   public void onDetach() {
     super.onDetach();
-    LogFacade.debug(LOG_TAG, "onDetach");
+    LogFacade.entry(LOG_TAG, "onDetach");
   }
 
   //
