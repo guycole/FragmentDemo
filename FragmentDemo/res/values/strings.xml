@@ -13,14 +13,22 @@
   <string name="about_label_product">Device Product</string>
   <string name="about_label_unknown">Unknown</string>
 
+  <string name="button_save">Save</string>
+
+  <string name="hint_comment">Comment</string>
+
   <string name="label_fragment_one">Fragment One</string>
   <string name="label_fragment_two">Fragment Two</string>
   <string name="label_fragment_three">Fragment Three</string>
   <string name="label_fragment_four">Fragment Four</string>
 
+  <string name="label_header_three">Header Three</string>
+
   <string name="label_no_rows">No Rows</string>
 
-  <string name="menu_application_bar_one">One</string>
+  <string name="label_stub">Stub</string>
+
+    <string name="menu_application_bar_one">One</string>
   <string name="menu_application_bar_two">Two</string>
   <string name="menu_application_bar_three">Three</string>
   <string name="menu_application_bar_four">Four</string>

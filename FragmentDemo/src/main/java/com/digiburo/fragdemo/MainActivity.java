@@ -60,6 +60,18 @@ public class MainActivity extends Activity {
   }
 
   @Override
+  public void onRestoreInstanceState(Bundle savedInstanceState) {
+    if (savedInstanceState.containsKey(SELECTED_TAB_NDX)) {
+      getActionBar().setSelectedNavigationItem(savedInstanceState.getInt(SELECTED_TAB_NDX));
+    }
+  }
+
+  @Override
+  public void onSaveInstanceState(Bundle outState) {
+    outState.putInt(SELECTED_TAB_NDX, getActionBar().getSelectedNavigationIndex());
+  }
+
+  @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
     getMenuInflater().inflate(R.menu.main, menu);
@@ -68,6 +80,9 @@ public class MainActivity extends Activity {
 
   //
   private TabDispatch tabDispatch;
+
+  //
+  public static final String SELECTED_TAB_NDX = "SELECTED_TAB_NDX";
 
   //
   public static final String LOG_TAG = MainActivity.class.getName();

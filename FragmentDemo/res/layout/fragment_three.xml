@@ -5,11 +5,27 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
-  <TextView
-    android:background="#ff0000"
-    android:textColor="#0000ff"
-    android:layout_height="wrap_content"
-    android:layout_width="fill_parent"
-    android:text="@string/label_fragment_three" />
+  <ListView android:id="@id/android:list"
+    android:background="@color/light_gray"
+    android:cacheColorHint="@color/light_gray"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="5dp"
+    android:layout_weight="1"
+    android:drawSelectorOnTop="true"
+    android:layout_height="0dp"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="6dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="6dp"/>
 
+    <TextView
+      android:id="@id/android:empty"
+      android:text="@string/label_no_rows"
+      android:textColor="@color/dark_gray"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      android:typeface="sans"
+      android:gravity="center"
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"/>
 </LinearLayout>

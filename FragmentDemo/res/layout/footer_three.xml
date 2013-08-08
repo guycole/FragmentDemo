@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingBottom="10dp" >
+
+  <EditText
+    android:id="@+id/editFooter01"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="top"
+    android:hint="@string/hint_comment"
+    android:lines="3"
+    android:maxLines="3"
+    android:padding="10dp"
+    android:textColor="@color/dark_gray"
+    android:textColorHint="#cdcdcd"
+    android:textCursorDrawable="@null"
+    android:textSize="18sp"
+    android:typeface="sans" >
+    <requestFocus />
+  </EditText>
+  
+  <ImageButton
+    android:id="@+id/buttonSkull01"
+    android:layout_width="42dp"
+    android:layout_height="42dp"
+    android:layout_below="@+id/editFooter01"
+    android:layout_alignParentLeft="true"
+    android:layout_centerVertical="true"
+    android:src="@drawable/skull64" />
+
+  <Button
+    android:id="@+id/buttonSave01"
+    android:text="@string/button_save"
+    android:textColor="@color/white"
+    android:gravity="right|center_vertical"
+    android:layout_below="@+id/editFooter01"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_height="wrap_content" 
+    android:layout_width="wrap_content"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp" />
+</RelativeLayout>
