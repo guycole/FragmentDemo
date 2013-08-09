@@ -1,6 +1,8 @@
-package com.digiburo.fragdemo;
+package com.digiburo.fragdemo.utility;
 
 import android.util.Log;
+
+import com.digiburo.fragdemo.Constants;
 
 /**
  * wrapper for android logger

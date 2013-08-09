@@ -1,4 +1,4 @@
-package com.digiburo.fragdemo;
+package com.digiburo.fragdemo.ui;
 
 /**
  * navigate from list to detail

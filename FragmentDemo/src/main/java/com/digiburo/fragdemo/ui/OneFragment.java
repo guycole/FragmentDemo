@@ -1,4 +1,4 @@
-package com.digiburo.fragdemo;
+package com.digiburo.fragdemo.ui;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -9,23 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * State form detail
- */
-public class StateDetailFragment extends Fragment {
+import com.digiburo.fragdemo.utility.LogFacade;
+import com.digiburo.fragdemo.R;
 
-  /**
-   * Define detail candidate
-   * @param arg
-   */
-  public void setStateName(String arg) {
-    stateName = arg;
-  }
+/**
+ * Service the "one" tab - display platform build information (simple form)
+ */
+public class OneFragment extends Fragment {
 
   /**
    * mandatory empty ctor
    */
-  public StateDetailFragment() {
+  public OneFragment() {
     //empty
   }
 
@@ -46,7 +41,7 @@ public class StateDetailFragment extends Fragment {
     super.onCreateView(inflater, container, savedInstanceState);
     LogFacade.entry(LOG_TAG, "onCreateView");
 
-    View view = inflater.inflate(R.layout.fragment_state_detail, container, false);
+    View view = inflater.inflate(R.layout.fragment_one, container, false);
     return(view);
   }
 
@@ -55,23 +50,31 @@ public class StateDetailFragment extends Fragment {
     super.onActivityCreated(savedInstanceState);
     LogFacade.entry(LOG_TAG, "onActivityCreated");
 
-    tvName = (TextView) getActivity().findViewById(R.id.detail_name01);
+    tvBoard = (TextView) getActivity().findViewById(R.id.about_board01);
+    tvBrand = (TextView) getActivity().findViewById(R.id.about_brand01);
+    tvManufacturer = (TextView) getActivity().findViewById(R.id.about_manufacturer01);
+    tvModel = (TextView) getActivity().findViewById(R.id.about_model01);
+    tvName = (TextView) getActivity().findViewById(R.id.about_name01);
+    tvProduct = (TextView) getActivity().findViewById(R.id.about_product01);
   }
 
   @Override
   public void onStart() {
     super.onStart();
     LogFacade.entry(LOG_TAG, "onStart");
+
+    tvBoard.setText(Build.BOARD);
+    tvBrand.setText(Build.BRAND);
+    tvManufacturer.setText(Build.MANUFACTURER);
+    tvModel.setText(Build.MODEL);
+    tvName.setText(Build.DEVICE);
+    tvProduct.setText(Build.PRODUCT);
   }
 
   @Override
   public void onResume() {
     super.onResume();
     LogFacade.entry(LOG_TAG, "onResume");
-
-    if (stateName != null) {
-      tvName.setText(stateName);
-    }
   }
 
   @Override
@@ -105,14 +108,16 @@ public class StateDetailFragment extends Fragment {
   }
 
   //
+  private TextView tvBoard;
+  private TextView tvBrand;
+  private TextView tvManufacturer;
+  private TextView tvModel;
   private TextView tvName;
+  private TextView tvProduct;
 
   //
-  private String stateName;
-
-  //
-  public static final String LOG_TAG = StateDetailFragment.class.getName();
+  public static final String LOG_TAG = OneFragment.class.getName();
 }
 /**
- * Created by guycole on 8/8/13.
+ * Created by guycole on 8/6/13.
  */

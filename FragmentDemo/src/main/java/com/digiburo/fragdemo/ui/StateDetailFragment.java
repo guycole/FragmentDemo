@@ -1,4 +1,4 @@
-package com.digiburo.fragdemo;
+package com.digiburo.fragdemo.ui;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -6,16 +6,28 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.digiburo.fragdemo.utility.LogFacade;
+import com.digiburo.fragdemo.R;
 
 /**
- *
+ * State form detail
  */
-public class FourFragment extends Fragment {
+public class StateDetailFragment extends Fragment {
+
+  /**
+   * Define detail candidate
+   * @param arg
+   */
+  public void setStateName(String arg) {
+    stateName = arg;
+  }
 
   /**
    * mandatory empty ctor
    */
-  public FourFragment() {
+  public StateDetailFragment() {
     //empty
   }
 
@@ -36,7 +48,7 @@ public class FourFragment extends Fragment {
     super.onCreateView(inflater, container, savedInstanceState);
     LogFacade.entry(LOG_TAG, "onCreateView");
 
-    View view = inflater.inflate(R.layout.fragment_four, container, false);
+    View view = inflater.inflate(R.layout.fragment_state_detail, container, false);
     return(view);
   }
 
@@ -44,6 +56,8 @@ public class FourFragment extends Fragment {
   public void onActivityCreated(Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
     LogFacade.entry(LOG_TAG, "onActivityCreated");
+
+    tvName = (TextView) getActivity().findViewById(R.id.detail_name01);
   }
 
   @Override
@@ -56,6 +70,10 @@ public class FourFragment extends Fragment {
   public void onResume() {
     super.onResume();
     LogFacade.entry(LOG_TAG, "onResume");
+
+    if (stateName != null) {
+      tvName.setText(stateName);
+    }
   }
 
   @Override
@@ -89,8 +107,14 @@ public class FourFragment extends Fragment {
   }
 
   //
-  public static final String LOG_TAG = FourFragment.class.getName();
+  private TextView tvName;
+
+  //
+  private String stateName;
+
+  //
+  public static final String LOG_TAG = StateDetailFragment.class.getName();
 }
 /**
- * Created by guycole on 8/6/13.
+ * Created by guycole on 8/8/13.
  */

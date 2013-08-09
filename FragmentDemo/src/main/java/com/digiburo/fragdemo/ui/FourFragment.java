@@ -1,23 +1,24 @@
-package com.digiburo.fragdemo;
+package com.digiburo.fragdemo.ui;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import com.digiburo.fragdemo.utility.LogFacade;
+import com.digiburo.fragdemo.R;
 
 /**
- * Service the "one" tab - display platform build information (simple form)
+ *
  */
-public class OneFragment extends Fragment {
+public class FourFragment extends Fragment {
 
   /**
    * mandatory empty ctor
    */
-  public OneFragment() {
+  public FourFragment() {
     //empty
   }
 
@@ -38,7 +39,7 @@ public class OneFragment extends Fragment {
     super.onCreateView(inflater, container, savedInstanceState);
     LogFacade.entry(LOG_TAG, "onCreateView");
 
-    View view = inflater.inflate(R.layout.fragment_one, container, false);
+    View view = inflater.inflate(R.layout.fragment_four, container, false);
     return(view);
   }
 
@@ -46,26 +47,12 @@ public class OneFragment extends Fragment {
   public void onActivityCreated(Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
     LogFacade.entry(LOG_TAG, "onActivityCreated");
-
-    tvBoard = (TextView) getActivity().findViewById(R.id.about_board01);
-    tvBrand = (TextView) getActivity().findViewById(R.id.about_brand01);
-    tvManufacturer = (TextView) getActivity().findViewById(R.id.about_manufacturer01);
-    tvModel = (TextView) getActivity().findViewById(R.id.about_model01);
-    tvName = (TextView) getActivity().findViewById(R.id.about_name01);
-    tvProduct = (TextView) getActivity().findViewById(R.id.about_product01);
   }
 
   @Override
   public void onStart() {
     super.onStart();
     LogFacade.entry(LOG_TAG, "onStart");
-
-    tvBoard.setText(Build.BOARD);
-    tvBrand.setText(Build.BRAND);
-    tvManufacturer.setText(Build.MANUFACTURER);
-    tvModel.setText(Build.MODEL);
-    tvName.setText(Build.DEVICE);
-    tvProduct.setText(Build.PRODUCT);
   }
 
   @Override
@@ -105,15 +92,7 @@ public class OneFragment extends Fragment {
   }
 
   //
-  private TextView tvBoard;
-  private TextView tvBrand;
-  private TextView tvManufacturer;
-  private TextView tvModel;
-  private TextView tvName;
-  private TextView tvProduct;
-
-  //
-  public static final String LOG_TAG = OneFragment.class.getName();
+  public static final String LOG_TAG = FourFragment.class.getName();
 }
 /**
  * Created by guycole on 8/6/13.

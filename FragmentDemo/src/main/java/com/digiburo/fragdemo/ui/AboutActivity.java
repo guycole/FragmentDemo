@@ -1,4 +1,4 @@
-package com.digiburo.fragdemo;
+package com.digiburo.fragdemo.ui;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.webkit.WebView;
+
+import com.digiburo.fragdemo.utility.LogFacade;
+import com.digiburo.fragdemo.R;
 
 /**
  * Menu option:About, shameless self promotion

@@ -12,20 +12,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2b11871-2dbf-40e2-9284-e75752c63ee3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/AboutActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/StateDetailFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/StateDetailListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FragmentDemo/res/layout/activity_about.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FragmentDemo/res/layout/fragment_state_detail.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/AboutActivity.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/AboutActivity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/CustomArrayAdapter.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/CustomArrayAdapter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/FourFragment.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/FourFragment.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/LogFacade.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/utility/LogFacade.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/MainActivity.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/MainActivity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/OneFragment.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/OneFragment.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/StateDetailFragment.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/StateDetailFragment.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/StateDetailListener.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/StateDetailListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TabDispatch.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/TabHelper.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ThreeFragment.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/ThreeFragment.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TwoFragment.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/TwoFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FragmentDemo/target/FragDemo.apk.res" afterPath="$PROJECT_DIR$/FragmentDemo/target/FragDemo.apk.res" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FragmentDemo/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FragmentDemo/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/MainActivity.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TabDispatch.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TabDispatch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ThreeFragment.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ThreeFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TwoFragment.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TwoFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FragmentDemo/res/menu/main.xml" afterPath="$PROJECT_DIR$/FragmentDemo/res/menu/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FragmentDemo/res/layout/row_three.xml" afterPath="$PROJECT_DIR$/FragmentDemo/res/layout/row_three.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FragmentDemo/res/values/strings.xml" afterPath="$PROJECT_DIR$/FragmentDemo/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/Constants.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/Constants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/FragDemoApplication.java" afterPath="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/FragDemoApplication.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FragmentDemo.iws" />
@@ -93,38 +94,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/MainActivity.java">
+      <file leaf-file-name="DummyTable.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DummyTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="2085">
+            <state line="30" column="23" selection-start="605" selection-end="605" vertical-scroll-proportion="0.33226836" vertical-offset="346" max-vertical-offset="1215">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="49" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TwoFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TwoFragment.java">
+      <file leaf-file-name="DummyModel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DummyModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="76" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2385">
-              <folding />
+            <state line="17" column="4" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="1215">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreeFragment.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ThreeFragment.java">
+      <file leaf-file-name="TabHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/TabHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="83" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.4633431" vertical-offset="277" max-vertical-offset="2895">
-              <folding />
+            <state line="90" column="4" selection-start="3129" selection-end="3129" vertical-scroll-proportion="0.0" vertical-offset="1246" max-vertical-offset="3840">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomArrayAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/CustomArrayAdapter.java">
+      <file leaf-file-name="DataBaseHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DataBaseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="945">
-              <folding />
+            <state line="7" column="0" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,22 +165,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/FragmentDemo/assets/html/about.html" />
-        <option value="$PROJECT_DIR$/FragmentDemo/res/layout/activity_about.xml" />
-        <option value="$PROJECT_DIR$/FragmentDemo/res/menu/main.xml" />
-        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/AboutActivity.java" />
-        <option value="$PROJECT_DIR$/FragmentDemo/res/layout/kill_me.xml" />
-        <option value="$PROJECT_DIR$/FragmentDemo/res/layout/row_three.xml" />
-        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TwoFragmentDetail.java" />
-        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/FragmentDetail.java" />
-        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/StateDetailListener.java" />
-        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/MainActivity.java" />
-        <option value="$PROJECT_DIR$/FragmentDemo/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/FragmentDemo/res/layout/fragment_state_detail.xml" />
-        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TabDispatch.java" />
-        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/StateDetailFragment.java" />
         <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TwoFragment.java" />
         <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ThreeFragment.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TabHelper.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/MainActivity.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/CustomArrayAdapter.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/AboutActivity.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DataBaseModelIf.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DataBaseTableIf.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/AccountTable.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/AccountModel.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DataBaseFacade.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/Constants.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DataBaseHelper.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DummyTable.java" />
+        <option value="$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DummyModel.java" />
       </list>
     </option>
   </component>
@@ -209,6 +227,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -263,13 +282,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragdemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -300,6 +334,9 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/FragmentDemo/res/layout" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.digiburo.fragdemo.ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/FragDemo/src/main/java" />
@@ -488,6 +525,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3274648" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -499,7 +537,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958813" sideWeight="0.67253524" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13179572" sideWeight="0.67253524" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22817133" sideWeight="0.67253524" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22817133" sideWeight="0.6003521" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3996479" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3274648" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294893" sideWeight="0.67253524" order="3" side_tool="false" content_ui="tabs" />
@@ -507,8 +546,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32920793" sideWeight="0.67253524" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -572,135 +609,116 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/FourFragment.java">
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/StateDetailListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="39" selection-start="1549" selection-end="1549" vertical-scroll-proportion="2.6694915" vertical-offset="15" max-vertical-offset="1455">
+        <state line="18" column="38" selection-start="315" selection-end="352" vertical-scroll-proportion="0.49815497" vertical-offset="0" max-vertical-offset="542">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/res/layout/footer_three.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/StateDetailFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="1.6666666" vertical-offset="60" max-vertical-offset="780">
+        <state line="48" column="63" selection-start="1134" selection-end="1134" vertical-scroll-proportion="1.1346864" vertical-offset="0" max-vertical-offset="1755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="4" selection-start="743" selection-end="743" vertical-scroll-proportion="0.52583027" vertical-offset="0" max-vertical-offset="542">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/AboutActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="33" selection-start="8" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/CustomArrayAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="409" selection-end="409" vertical-scroll-proportion="0.027675277" vertical-offset="120" max-vertical-offset="945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/ThreeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="83" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.028355388" vertical-offset="420" max-vertical-offset="2895">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/TwoFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="76" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.027675277" vertical-offset="390" max-vertical-offset="2385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="29" selection-start="3249" selection-end="3249" vertical-scroll-proportion="0.5295203" vertical-offset="1468" max-vertical-offset="2010">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DataBaseTableIf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="520" selection-end="562" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DataBaseModelIf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="3" selection-start="832" selection-end="873" vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="735">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="78" selection-end="78" vertical-scroll-proportion="0.21186441" vertical-offset="0" max-vertical-offset="354">
+        <state line="13" column="49" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/StateDetailListener.java">
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DataBaseHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="38" selection-start="315" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/res/layout/activity_about.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="314">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/res/layout/fragment_one.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="15" selection-start="224" selection-end="597" vertical-scroll-proportion="-8.888889" vertical-offset="0" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="22" selection-start="729" selection-end="729" vertical-scroll-proportion="0.4661017" vertical-offset="105" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/res/layout/fragment_state_detail.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="48" selection-start="517" selection-end="538" vertical-scroll-proportion="-8.333333" vertical-offset="0" max-vertical-offset="360">
-          <folding>
-            <element signature="e#459#487#0" expanded="true" />
-            <element signature="e#551#581#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TabDispatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="46" selection-start="6005" selection-end="6005" vertical-scroll-proportion="5.3055553" vertical-offset="0" max-vertical-offset="3855">
+        <state line="7" column="0" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/StateDetailFragment.java">
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DummyModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="63" selection-start="1134" selection-end="1134" vertical-scroll-proportion="1.1388888" vertical-offset="0" max-vertical-offset="1755">
-          <folding />
+        <state line="17" column="4" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="1215">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/OneFragment.java">
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ui/TabHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="364" selection-end="364" vertical-scroll-proportion="0.27966103" vertical-offset="6" max-vertical-offset="1785">
-          <folding />
+        <state line="90" column="4" selection-start="3129" selection-end="3129" vertical-scroll-proportion="0.0" vertical-offset="1246" max-vertical-offset="3840">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/content/DummyTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="2010">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/TwoFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="76" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2385">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/CustomArrayAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FragmentDemo/src/main/java/com/digiburo/fragdemo/ThreeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="83" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.4633431" vertical-offset="277" max-vertical-offset="2895">
-          <folding />
+        <state line="30" column="23" selection-start="605" selection-end="605" vertical-scroll-proportion="0.33226836" vertical-offset="346" max-vertical-offset="1215">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -721,7 +739,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Android (FragmentDemo)|Android</last-edited>
+          <last-edited>Android</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -756,7 +774,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>FragmentDemo</last-edited>
+          <last-edited>FragDemo</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

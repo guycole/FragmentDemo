@@ -1,4 +1,4 @@
-package com.digiburo.fragdemo;
+package com.digiburo.fragdemo.ui;
 
 import java.util.List;
 
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.digiburo.fragdemo.utility.LogFacade;
+import com.digiburo.fragdemo.R;
 
 /**
  * support listview of String items

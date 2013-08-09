@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.res.Configuration;
 import android.util.Log;
 
+import com.digiburo.fragdemo.utility.LogFacade;
+
 /**
  * perform application startup chores
  */

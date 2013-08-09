@@ -1,8 +1,6 @@
-package com.digiburo.fragdemo;
+package com.digiburo.fragdemo.ui;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.app.Fragment;
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -13,18 +11,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
+import com.digiburo.fragdemo.utility.LogFacade;
+import com.digiburo.fragdemo.R;
+
+import java.util.ArrayList;
+
 /**
- * Service the "two" tab - simple scrolling list w/no loader
+ * Service the "three" tab - simple scrolling list w/no loader
  * Supports short and long press on row
+ * Header and footer on list view
+ * Custom row adapter
  */
-public class TwoFragment extends ListFragment {
+public class ThreeFragment extends ListFragment {
 
   /**
    * mandatory empty ctor
    */
-  public TwoFragment() {
+  public ThreeFragment() {
     //empty
   }
 
@@ -38,7 +46,7 @@ public class TwoFragment extends ListFragment {
   @Override
   public void onListItemClick(ListView listView, View view, int position, long id) {
     LogFacade.entry(LOG_TAG, "click:" + position + ":" + id);
-    stateDetailListener.onStateSelect((String) arrayAdapter.getItem(position), TabDispatch.TAG_TWO);
+    stateDetailListener.onStateSelect((String) customArrayAdapter.getItem(position-1), TabHelper.TAG_THREE);
     returnFromDetailFlag = true;
   }
 
@@ -58,7 +66,7 @@ public class TwoFragment extends ListFragment {
   @Override
   public boolean onContextItemSelected(MenuItem item) {
     AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-    LogFacade.entry(LOG_TAG, "on context item select:" + item + ":" + info.id + ":" + arrayAdapter.getItem(info.position));
+    LogFacade.entry(LOG_TAG, "on context item select:" + item + ":" + info.id + ":" + customArrayAdapter.getItem(info.position));
 
     return super.onContextItemSelected(item);
   }
@@ -76,7 +84,14 @@ public class TwoFragment extends ListFragment {
     LogFacade.entry(LOG_TAG, "onCreate");
 
     //
-    arrayAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.us_states, android.R.layout.simple_list_item_1);
+    ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.us_states, android.R.layout.simple_list_item_1);
+
+    ArrayList<String> arrayList = new ArrayList<String>();
+    for (int ii = 0; ii < arrayAdapter.getCount(); ii++) {
+      arrayList.add((String) arrayAdapter.getItem(ii));
+    }
+
+    customArrayAdapter = new CustomArrayAdapter(getActivity(), arrayList);
   }
 
   @Override
@@ -84,7 +99,10 @@ public class TwoFragment extends ListFragment {
     super.onCreateView(inflater, container, savedInstanceState);
     LogFacade.entry(LOG_TAG, "onCreateView");
 
-    View view = inflater.inflate(R.layout.fragment_two, container, false);
+    footerView = inflater.inflate(R.layout.footer_three, null);
+    headerView = inflater.inflate(R.layout.header_three, null);
+
+    View view = inflater.inflate(R.layout.fragment_three, container, false);
     return(view);
   }
 
@@ -93,7 +111,10 @@ public class TwoFragment extends ListFragment {
     super.onActivityCreated(savedInstanceState);
     LogFacade.entry(LOG_TAG, "onActivityCreated");
 
-    setListAdapter(arrayAdapter);
+    getListView().addFooterView(footerView);
+    getListView().addHeaderView(headerView);
+
+    setListAdapter(customArrayAdapter);
 
     registerForContextMenu(getListView());
   }
@@ -102,6 +123,22 @@ public class TwoFragment extends ListFragment {
   public void onStart() {
     super.onStart();
     LogFacade.entry(LOG_TAG, "onStart");
+
+    footerComment = (EditText) getActivity().findViewById(R.id.editFooter01);
+
+    ImageButton imageButton = (ImageButton) getActivity().findViewById(R.id.buttonSkull01);
+    imageButton.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View view) {
+      LogFacade.entry(LOG_TAG, "onClick:imageButton");
+      }
+    });
+
+    Button saveButton = (Button) getActivity().findViewById(R.id.buttonSave01);
+    saveButton.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View view) {
+      LogFacade.entry(LOG_TAG, "onClick:saveButton:" + footerComment.getText());
+      }
+    });
   }
 
   @Override
@@ -111,7 +148,7 @@ public class TwoFragment extends ListFragment {
 
     if (returnFromDetailFlag) {
       returnFromDetailFlag = false;
-      stateDetailListener.onStateDeselect(TabDispatch.TAG_TWO);
+      stateDetailListener.onStateDeselect(TabHelper.TAG_THREE);
     }
   }
 
@@ -147,7 +184,14 @@ public class TwoFragment extends ListFragment {
   }
 
   //
-  private ArrayAdapter<CharSequence> arrayAdapter;
+  private View footerView;
+  private View headerView;
+
+  //
+  private EditText footerComment;
+
+  //
+  private CustomArrayAdapter customArrayAdapter;
 
   // handle transition events between selected item and detail
   private StateDetailListener stateDetailListener;
@@ -159,7 +203,7 @@ public class TwoFragment extends ListFragment {
   public static final int CONTEXT_ITEM_1 = Menu.FIRST;
 
   //
-  public static final String LOG_TAG = TwoFragment.class.getName();
+  public static final String LOG_TAG = ThreeFragment.class.getName();
 }
 /**
  * Created by guycole on 8/6/13.

@@ -1,4 +1,4 @@
-package com.digiburo.fragdemo;
+package com.digiburo.fragdemo.ui;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -6,16 +6,15 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 
+import com.digiburo.fragdemo.utility.LogFacade;
 import com.digiburo.fragdemo.R;
-
-import sun.tools.tree.AssignBitOrExpression;
 
 /**
  * React to ActionBar tab events
  */
-public class TabDispatch implements ActionBar.TabListener, FragmentManager.OnBackStackChangedListener {
+public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackStackChangedListener {
 
-  public TabDispatch(Activity activity) {
+  public TabHelper(Activity activity) {
     mainActivity = activity;
 
     oneFragment = (OneFragment) Fragment.instantiate(mainActivity, OneFragment.class.getName());
@@ -244,7 +243,7 @@ public class TabDispatch implements ActionBar.TabListener, FragmentManager.OnBac
   public static final String TAG_STATE_DETAIL = "TAG_STATE_DETAIL";
 
   //
-  public static final String LOG_TAG = TabDispatch.class.getName();
+  public static final String LOG_TAG = TabHelper.class.getName();
 }
 /**
  * Created by guycole on 8/6/13.

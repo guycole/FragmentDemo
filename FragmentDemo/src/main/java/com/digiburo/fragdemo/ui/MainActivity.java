@@ -1,4 +1,4 @@
-package com.digiburo.fragdemo;
+package com.digiburo.fragdemo.ui;
 
 import android.app.ActionBar;
 import android.content.Intent;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.digiburo.fragdemo.utility.LogFacade;
+import com.digiburo.fragdemo.R;
 
 /**
  *
@@ -18,7 +21,7 @@ public class MainActivity extends Activity implements StateDetailListener {
    */
   public void onStateDeselect(String tabTag) {
     LogFacade.entry(LOG_TAG, "onStateDeselect:" + tabTag);
-    tabDispatch.onStateDeselect(tabTag);
+    tabHelper.onStateDeselect(tabTag);
     LogFacade.exit(LOG_TAG, "onStateDeselect");
   }
 
@@ -29,7 +32,7 @@ public class MainActivity extends Activity implements StateDetailListener {
    */
   public void onStateSelect(String stateName, String tabTag) {
     LogFacade.entry(LOG_TAG, "onStateSelect:" + stateName + ":" + tabTag);
-    tabDispatch.onStateSelect(stateName, tabTag);
+    tabHelper.onStateSelect(stateName, tabTag);
     LogFacade.exit(LOG_TAG, "onStateSelect");
   }
 
@@ -78,8 +81,8 @@ public class MainActivity extends Activity implements StateDetailListener {
     ActionBar actionBar = getActionBar();
     actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-    tabDispatch = new TabDispatch(this);
-    tabDispatch.initialize();
+    tabHelper = new TabHelper(this);
+    tabHelper.initialize();
   }
 
   @Override
@@ -120,7 +123,7 @@ public class MainActivity extends Activity implements StateDetailListener {
   }
 
   //
-  private TabDispatch tabDispatch;
+  private TabHelper tabHelper;
 
   //
   public static final String SELECTED_TAB_NDX = "SELECTED_TAB_NDX";
