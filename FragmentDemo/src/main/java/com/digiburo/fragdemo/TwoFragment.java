@@ -1,5 +1,6 @@
 package com.digiburo.fragdemo;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.ListFragment;
@@ -37,6 +38,8 @@ public class TwoFragment extends ListFragment {
   @Override
   public void onListItemClick(ListView listView, View view, int position, long id) {
     LogFacade.entry(LOG_TAG, "click:" + position + ":" + id);
+    stateDetailListener.onStateSelect((String) arrayAdapter.getItem(position), TabDispatch.TAG_TWO);
+    returnFromDetailFlag = true;
   }
 
   /**
@@ -55,7 +58,7 @@ public class TwoFragment extends ListFragment {
   @Override
   public boolean onContextItemSelected(MenuItem item) {
     AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-    LogFacade.entry(LOG_TAG, "on context item select:" + item + ":" + info.id);
+    LogFacade.entry(LOG_TAG, "on context item select:" + item + ":" + info.id + ":" + arrayAdapter.getItem(info.position));
 
     return super.onContextItemSelected(item);
   }
@@ -64,6 +67,7 @@ public class TwoFragment extends ListFragment {
   public void onAttach(Activity activity) {
     super.onAttach(activity);
     LogFacade.entry(LOG_TAG, "onAttach");
+    stateDetailListener = (StateDetailListener) activity;
   }
 
   @Override
@@ -104,6 +108,11 @@ public class TwoFragment extends ListFragment {
   public void onResume() {
     super.onResume();
     LogFacade.entry(LOG_TAG, "onResume");
+
+    if (returnFromDetailFlag) {
+      returnFromDetailFlag = false;
+      stateDetailListener.onStateDeselect(TabDispatch.TAG_TWO);
+    }
   }
 
   @Override
@@ -139,6 +148,12 @@ public class TwoFragment extends ListFragment {
 
   //
   private ArrayAdapter<CharSequence> arrayAdapter;
+
+  // handle transition events between selected item and detail
+  private StateDetailListener stateDetailListener;
+
+  // true, returning from detail fragment
+  private boolean returnFromDetailFlag = false;
 
   //context menu
   public static final int CONTEXT_ITEM_1 = Menu.FIRST;

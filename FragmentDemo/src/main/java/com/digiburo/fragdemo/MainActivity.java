@@ -1,14 +1,37 @@
 package com.digiburo.fragdemo;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.MenuItem;
 
 /**
  *
  */
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements StateDetailListener {
+
+  /**
+   * Remove state detail fragment
+   * @param tabTag
+   */
+  public void onStateDeselect(String tabTag) {
+    LogFacade.entry(LOG_TAG, "onStateDeselect:" + tabTag);
+    tabDispatch.onStateDeselect(tabTag);
+    LogFacade.exit(LOG_TAG, "onStateDeselect");
+  }
+
+  /**
+   * Display state detail fragment
+   * @param stateName state name
+   * @param tabTag parent tab
+   */
+  public void onStateSelect(String stateName, String tabTag) {
+    LogFacade.entry(LOG_TAG, "onStateSelect:" + stateName + ":" + tabTag);
+    tabDispatch.onStateSelect(stateName, tabTag);
+    LogFacade.exit(LOG_TAG, "onStateSelect");
+  }
 
   @Override
   protected void onStart() {
@@ -76,6 +99,24 @@ public class MainActivity extends Activity {
     // Inflate the menu; this adds items to the action bar if it is present.
     getMenuInflater().inflate(R.menu.main, menu);
     return true;
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    LogFacade.entry(LOG_TAG, "onOptionsItemSelected:" + item.getItemId());
+    switch (item.getItemId()) {
+      case R.id.menu_about:
+        LogFacade.debug(LOG_TAG, "menu about");
+        startActivity(new Intent(this, AboutActivity.class));
+        return(true);
+      case R.id.menu_settings:
+        LogFacade.debug(LOG_TAG, "menu settings");
+//TODO
+//        startActivity(new Intent(this, SettingsActivity.class));
+        return(true);
+      default:
+        return super.onOptionsItemSelected(item);
+    }
   }
 
   //

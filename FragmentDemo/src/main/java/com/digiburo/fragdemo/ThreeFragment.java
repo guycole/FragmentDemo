@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -41,6 +44,8 @@ public class ThreeFragment extends ListFragment {
   @Override
   public void onListItemClick(ListView listView, View view, int position, long id) {
     LogFacade.entry(LOG_TAG, "click:" + position + ":" + id);
+    stateDetailListener.onStateSelect((String) customArrayAdapter.getItem(position-1), TabDispatch.TAG_THREE);
+    returnFromDetailFlag = true;
   }
 
   /**
@@ -59,7 +64,7 @@ public class ThreeFragment extends ListFragment {
   @Override
   public boolean onContextItemSelected(MenuItem item) {
     AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-    LogFacade.entry(LOG_TAG, "on context item select:" + item + ":" + info.id);
+    LogFacade.entry(LOG_TAG, "on context item select:" + item + ":" + info.id + ":" + customArrayAdapter.getItem(info.position));
 
     return super.onContextItemSelected(item);
   }
@@ -68,6 +73,7 @@ public class ThreeFragment extends ListFragment {
   public void onAttach(Activity activity) {
     super.onAttach(activity);
     LogFacade.entry(LOG_TAG, "onAttach");
+    stateDetailListener = (StateDetailListener) activity;
   }
 
   @Override
@@ -103,14 +109,8 @@ public class ThreeFragment extends ListFragment {
     super.onActivityCreated(savedInstanceState);
     LogFacade.entry(LOG_TAG, "onActivityCreated");
 
- //   if (needDecorationFlag) {
-      LogFacade.debug(LOG_TAG, "decoration flag true");
-      needDecorationFlag = false;
-      getListView().addFooterView(footerView);
-      getListView().addHeaderView(headerView);
- //   } else {
- //     LogFacade.debug(LOG_TAG, "decoration flag false");
- //   }
+    getListView().addFooterView(footerView);
+    getListView().addHeaderView(headerView);
 
     setListAdapter(customArrayAdapter);
 
@@ -121,12 +121,33 @@ public class ThreeFragment extends ListFragment {
   public void onStart() {
     super.onStart();
     LogFacade.entry(LOG_TAG, "onStart");
+
+    footerComment = (EditText) getActivity().findViewById(R.id.editFooter01);
+
+    ImageButton imageButton = (ImageButton) getActivity().findViewById(R.id.buttonSkull01);
+    imageButton.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View view) {
+      LogFacade.entry(LOG_TAG, "onClick:imageButton");
+      }
+    });
+
+    Button saveButton = (Button) getActivity().findViewById(R.id.buttonSave01);
+    saveButton.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View view) {
+      LogFacade.entry(LOG_TAG, "onClick:saveButton:" + footerComment.getText());
+      }
+    });
   }
 
   @Override
   public void onResume() {
     super.onResume();
     LogFacade.entry(LOG_TAG, "onResume");
+
+    if (returnFromDetailFlag) {
+      returnFromDetailFlag = false;
+      stateDetailListener.onStateDeselect(TabDispatch.TAG_THREE);
+    }
   }
 
   @Override
@@ -164,11 +185,17 @@ public class ThreeFragment extends ListFragment {
   private View footerView;
   private View headerView;
 
-  // determine if header/footer decorations have been added
-  private boolean needDecorationFlag = true;
+  //
+  private EditText footerComment;
 
   //
   private CustomArrayAdapter customArrayAdapter;
+
+  // handle transition events between selected item and detail
+  private StateDetailListener stateDetailListener;
+
+  // true, returning from detail fragment
+  private boolean returnFromDetailFlag = false;
 
   //context menu
   public static final int CONTEXT_ITEM_1 = Menu.FIRST;

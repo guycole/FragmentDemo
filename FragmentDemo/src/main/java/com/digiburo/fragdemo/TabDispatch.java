@@ -3,39 +3,52 @@ package com.digiburo.fragdemo;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 
 import com.digiburo.fragdemo.R;
 
+import sun.tools.tree.AssignBitOrExpression;
+
 /**
  * React to ActionBar tab events
  */
-public class TabDispatch implements ActionBar.TabListener {
+public class TabDispatch implements ActionBar.TabListener, FragmentManager.OnBackStackChangedListener {
 
   public TabDispatch(Activity activity) {
     mainActivity = activity;
+
     oneFragment = (OneFragment) Fragment.instantiate(mainActivity, OneFragment.class.getName());
     twoFragment = (TwoFragment) Fragment.instantiate(mainActivity, TwoFragment.class.getName());
     threeFragment = (ThreeFragment) Fragment.instantiate(mainActivity, ThreeFragment.class.getName());
     fourFragment = (FourFragment) Fragment.instantiate(mainActivity, FourFragment.class.getName());
+
+    stateDetailFragment = (StateDetailFragment) Fragment.instantiate(mainActivity, StateDetailFragment.class.getName());
   }
 
+  /**
+   * ActionBar.TabListener
+   * @param tab
+   * @param fragmentTransaction
+   */
   @Override
-  public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+  public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     LogFacade.entry(LOG_TAG, "onTabSelected:" + tab.getTag());
 
+    if (ignoreMe) {
+      //spurious event caused by changing navigation mode within onStateDeselect()
+      ignoreMe = false;
+      return;
+    }
+
     if (tab.getTag().equals(TAG_ONE)) {
-      ft.add(R.id.layoutFragment01, oneFragment, TAG_ONE);
-      ft.attach(oneFragment);
+      fragmentTransaction.add(R.id.layoutFragment01, oneFragment, TAG_ONE);
     } else if (tab.getTag().equals(TAG_TWO)) {
-      ft.add(R.id.layoutFragment01, twoFragment, TAG_TWO);
-      ft.attach(twoFragment);
+      fragmentTransaction.add(R.id.layoutFragment01, twoFragment, TAG_TWO);
     } else if (tab.getTag().equals(TAG_THREE)) {
-      ft.add(R.id.layoutFragment01, threeFragment, TAG_THREE);
-      ft.attach(threeFragment);
+      fragmentTransaction.add(R.id.layoutFragment01, threeFragment, TAG_THREE);
     } else if (tab.getTag().equals(TAG_FOUR)) {
-      ft.add(R.id.layoutFragment01, fourFragment, TAG_FOUR);
-      ft.attach(fourFragment);
+      fragmentTransaction.add(R.id.layoutFragment01, fourFragment, TAG_FOUR);
     } else {
       throw new IllegalArgumentException("unknown tab:" + tab.getTag());
     }
@@ -43,18 +56,23 @@ public class TabDispatch implements ActionBar.TabListener {
     LogFacade.exit(LOG_TAG, "onTabSelected:" + tab.getTag());
   }
 
+  /**
+   * ActionBar.TabListener
+   * @param tab
+   * @param fragmentTransaction
+   */
   @Override
-  public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
+  public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     LogFacade.entry(LOG_TAG, "onTabUnselected:" + tab.getTag());
 
     if (tab.getTag().equals(TAG_ONE)) {
-      ft.detach(oneFragment);
+      fragmentTransaction.remove(oneFragment);
     } else if (tab.getTag().equals(TAG_TWO)) {
-      ft.detach(twoFragment);
+      fragmentTransaction.remove(twoFragment);
     } else if (tab.getTag().equals(TAG_THREE)) {
-      ft.detach(threeFragment);
+      fragmentTransaction.remove(threeFragment);
     } else if (tab.getTag().equals(TAG_FOUR)) {
-      ft.detach(fourFragment);
+      fragmentTransaction.remove(fourFragment);
     } else {
       throw new IllegalArgumentException("unknown tab:" + tab.getTag());
     }
@@ -62,8 +80,13 @@ public class TabDispatch implements ActionBar.TabListener {
     LogFacade.exit(LOG_TAG, "onTabUnselected:" + tab.getTag());
   }
 
+  /**
+   * ActionBar.TabListener
+   * @param tab
+   * @param fragmentTransaction
+   */
   @Override
-  public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+  public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     LogFacade.entry(LOG_TAG, "onTabReselected:" + tab.getTag());
 
     if (tab.getTag().equals(TAG_ONE)) {
@@ -82,35 +105,47 @@ public class TabDispatch implements ActionBar.TabListener {
   }
 
   /**
+   * FragmentManager.OnBackStackChangedListener
+   */
+  public void onBackStackChanged() {
+    LogFacade.entry(LOG_TAG, "onBackStackChanged");
+    LogFacade.exit(LOG_TAG, "onBackStackChanged");
+  }
+
+  /**
    * populate ActionBar
    */
   public void initialize() {
     LogFacade.entry(LOG_TAG, "initialize");
 
+    FragmentManager fragmentManager = mainActivity.getFragmentManager();
+    fragmentManager.addOnBackStackChangedListener(this);
+
     ActionBar actionBar = mainActivity.getActionBar();
 
     oneTab = actionBar.newTab();
-    oneTab.setTabListener(this);
-    oneTab.setTag(TAG_ONE);
-    oneTab.setText(R.string.menu_application_bar_one);
-    actionBar.addTab(oneTab);
-
     twoTab = actionBar.newTab();
-    twoTab.setTabListener(this);
-    twoTab.setTag(TAG_TWO);
-    twoTab.setText(R.string.menu_application_bar_two);
-    actionBar.addTab(twoTab);
-
     threeTab = actionBar.newTab();
-    threeTab.setTabListener(this);
-    threeTab.setTag(TAG_THREE);
-    threeTab.setText(R.string.menu_application_bar_three);
-    actionBar.addTab(threeTab);
-
     fourTab = actionBar.newTab();
+
+    oneTab.setTabListener(this);
+    twoTab.setTabListener(this);
+    threeTab.setTabListener(this);
     fourTab.setTabListener(this);
+
+    oneTab.setTag(TAG_ONE);
+    twoTab.setTag(TAG_TWO);
+    threeTab.setTag(TAG_THREE);
     fourTab.setTag(TAG_FOUR);
+
+    oneTab.setText(R.string.menu_application_bar_one);
+    twoTab.setText(R.string.menu_application_bar_two);
+    threeTab.setText(R.string.menu_application_bar_three);
     fourTab.setText(R.string.menu_application_bar_four);
+
+    actionBar.addTab(oneTab);
+    actionBar.addTab(twoTab);
+    actionBar.addTab(threeTab);
     actionBar.addTab(fourTab);
 
     LogFacade.exit(LOG_TAG, "initialize");
@@ -135,6 +170,51 @@ public class TabDispatch implements ActionBar.TabListener {
     throw new IllegalArgumentException("unsupported tag:" + arg);
   }
 
+  /**
+   * State detail fragment is leaving, restore tabs
+   * @param tabTag
+   */
+  public void onStateDeselect(String tabTag) {
+    // when changing navigation mode, the platform will invoke onTabSelected for last tab
+    // this must be ignored because of attempt to add an already existing fragment
+    ignoreMe = true;
+    ActionBar actionBar = mainActivity.getActionBar();
+    actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+  }
+
+  /**
+   * State detail fragment is being created, hide tabs and switch fragment
+   * @param stateName
+   * @param tabTag
+   */
+  public void onStateSelect(String stateName, String tabTag) {
+    stateDetailFragment = new StateDetailFragment();
+    stateDetailFragment.setStateName(stateName);
+
+    FragmentManager fragmentManager = mainActivity.getFragmentManager();
+    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+    if (tabTag.equals(TAG_ONE)) {
+      fragmentTransaction.remove(oneFragment);
+    } else if (tabTag.equals(TAG_TWO)) {
+      fragmentTransaction.remove(twoFragment);
+    } else if (tabTag.equals(TAG_THREE)) {
+      fragmentTransaction.remove(threeFragment);
+    } else if (tabTag.equals(TAG_FOUR)) {
+      fragmentTransaction.remove(fourFragment);
+    }
+
+    fragmentTransaction.add(R.id.layoutFragment01, stateDetailFragment, TAG_STATE_DETAIL);
+
+    fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+
+    fragmentTransaction.addToBackStack(null);
+    fragmentTransaction.commit();
+
+    ActionBar actionBar = mainActivity.getActionBar();
+    actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+  }
+
   //
   private Activity mainActivity;
 
@@ -150,11 +230,18 @@ public class TabDispatch implements ActionBar.TabListener {
   private ThreeFragment threeFragment;
   private FourFragment fourFragment;
 
+  private StateDetailFragment stateDetailFragment;
+
+  // kludge
+  private boolean ignoreMe = false;
+
   //
   public static final String TAG_ONE = "TAG_ONE";
   public static final String TAG_TWO = "TAG_TWO";
   public static final String TAG_THREE = "TAG_THREE";
   public static final String TAG_FOUR = "TAG_FOUR";
+
+  public static final String TAG_STATE_DETAIL = "TAG_STATE_DETAIL";
 
   //
   public static final String LOG_TAG = TabDispatch.class.getName();

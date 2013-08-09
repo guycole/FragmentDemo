@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:stretchColumns="1">
+
+    <TableRow android:layout_marginBottom="7dp" >
+      <TextView android:text="@string/detail_label_state"/>
+      <TextView android:id="@+id/detail_name01" android:text="@string/detail_label_unknown"/>
+    </TableRow>
+  </TableLayout>
+</LinearLayout>
