@@ -2,22 +2,74 @@ package com.digiburo.fragdemo.ui;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.ListFragment;
+import android.app.LoaderManager;
+import android.content.CursorLoader;
+import android.content.Loader;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 
+import com.digiburo.fragdemo.content.DataBaseTableIf;
+import com.digiburo.fragdemo.content.DummyTable;
 import com.digiburo.fragdemo.utility.LogFacade;
 import com.digiburo.fragdemo.R;
 
 /**
  *
  */
-public class FourFragment extends Fragment {
+public class FourFragment extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor>  {
 
   /**
-   * mandatory empty ctor
+   * LoaderCallback
    */
+  public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+    LogFacade.entry(LOG_TAG, "onCreateLoader");
+
+    DataBaseTableIf table = new DummyTable();
+
+    String[] projection = table.getDefaultProjection();
+    String orderBy = table.getDefaultSortOrder();
+
+    String selection = null;
+    String[] selectionArgs = null;
+
+    CursorLoader loader = new CursorLoader(getActivity(), DummyTable.CONTENT_URI, projection, selection, selectionArgs, orderBy);
+    return(loader);
+  }
+
+  /**
+   * LoaderCallback
+   */
+  public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+    LogFacade.entry(LOG_TAG, "onLoadFinished:" + loader.toString());
+    adapter.swapCursor(data);
+    adapter.notifyDataSetChanged();
+  }
+
+  /**
+   * LoaderCallback
+   */
+  public void onLoaderReset(Loader<Cursor> loader) {
+    LogFacade.entry(LOG_TAG, "onLoaderReset");
+    adapter.swapCursor(null);
+  }
+
+  /**
+   * row selection
+   */
+  @Override
+  public void onListItemClick(ListView listView, View view, int position, long id) {
+    LogFacade.debug(LOG_TAG, "click:" + position + ":" + id);
+  }
+
+    /**
+     * mandatory empty ctor
+     */
   public FourFragment() {
     //empty
   }
@@ -32,6 +84,14 @@ public class FourFragment extends Fragment {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     LogFacade.entry(LOG_TAG, "onCreate");
+
+    // pacifiers
+    String[] columnz = {DummyTable.Columns.NAME};
+    int[] rowAttrz = {R.id.textName01};
+
+    adapter = new SimpleCursorAdapter(getActivity(), R.layout.row_four, null, columnz, rowAttrz, 0);
+
+    getLoaderManager().initLoader(0,  null, this);
   }
 
   @Override
@@ -47,6 +107,9 @@ public class FourFragment extends Fragment {
   public void onActivityCreated(Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
     LogFacade.entry(LOG_TAG, "onActivityCreated");
+
+    //
+    setListAdapter(adapter);
   }
 
   @Override
@@ -90,6 +153,9 @@ public class FourFragment extends Fragment {
     super.onDetach();
     LogFacade.entry(LOG_TAG, "onDetach");
   }
+
+  //
+  private SimpleCursorAdapter adapter;
 
   //
   public static final String LOG_TAG = FourFragment.class.getName();

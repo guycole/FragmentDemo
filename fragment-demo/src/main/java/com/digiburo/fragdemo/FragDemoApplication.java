@@ -2,9 +2,14 @@ package com.digiburo.fragdemo;
 
 import android.app.Application;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.util.Log;
 
+import com.digiburo.fragdemo.content.DummyModel;
+import com.digiburo.fragdemo.content.DummyTable;
 import com.digiburo.fragdemo.utility.LogFacade;
+
+import java.util.Random;
 
 /**
  * perform application startup chores
@@ -17,6 +22,17 @@ public class FragDemoApplication extends Application {
       Log.i(LOG_TAG, "----application start w/debug mode true");
     } else {
       Log.i(LOG_TAG, "----application start w/debug mode false");
+    }
+
+    // generate some random database items
+    Random random = new Random();
+
+    for (int ii = 0; ii < 100; ii++) {
+      DummyModel model = new DummyModel();
+      model.setDefault();
+      model.setName(Long.toHexString(random.nextLong()));
+      Uri result = getContentResolver().insert(DummyTable.CONTENT_URI, model.toContentValues());
+      System.out.println(model.getId() + ":" + model.getName() + ":" + result);
     }
   }
 

@@ -11,7 +11,12 @@ public class Constants {
   // flag development or production
   public static final boolean DEBUG_APPLICATION_MODE = true;
 
+  //
   public static final String AUTHORITY = "com.digiburo.fragdemo.authority";
+
+  //
+  public static final String DB_DEFAULT_NAME = "defaultName";
+
 }
 
 /**
