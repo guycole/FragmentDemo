@@ -19,5 +19,7 @@
       </intent-filter>
     </activity>
     <activity android:name=".ui.AboutActivity"/>
+
+    <provider android:name=".content.DataBaseProvider" android:authorities="com.digiburo.fragdemo.authority"/>
   </application>
 </manifest>

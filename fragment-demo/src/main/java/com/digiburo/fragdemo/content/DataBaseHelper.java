@@ -25,19 +25,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
   public void onCreate(SQLiteDatabase db) {
     LogFacade.entry(LOG_TAG, "onCreate");
 
-    /*
-    db.execSQL(AccountTable.CREATE_TABLE);
-    db.execSQL(HomeFragmentTable.CREATE_TABLE);
-    db.execSQL(ImageTable.CREATE_TABLE);
-    db.execSQL(NewsMeTable.CREATE_TABLE);
-    db.execSQL(OpportunityStageTable.CREATE_TABLE);
-    db.execSQL(OpportunityTable.CREATE_TABLE);
-    db.execSQL(PeopleTable.CREATE_TABLE);
-    db.execSQL(PhenomenonGroupTable.CREATE_TABLE);
-    db.execSQL(ScaleObservationTable.CREATE_TABLE);
-    db.execSQL(ScalePhenomenonTable.CREATE_TABLE);
-    db.execSQL(SessionTable.CREATE_TABLE);
-    */
+    db.execSQL(DummyTable.CREATE_TABLE);
   }
 
   /* (non-Javadoc)

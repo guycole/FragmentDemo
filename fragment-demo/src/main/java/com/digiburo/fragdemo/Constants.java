@@ -11,7 +11,7 @@ public class Constants {
   // flag development or production
   public static final boolean DEBUG_APPLICATION_MODE = true;
 
-  public static final String AUTHORITY = "bogus";
+  public static final String AUTHORITY = "com.digiburo.fragdemo.authority";
 }
 
 /**
