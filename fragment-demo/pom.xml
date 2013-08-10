@@ -5,10 +5,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.digiburo.fragdemo</groupId>
-  <artifactId>FragDemo</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <artifactId>fragment-demo</artifactId>
   <packaging>apk</packaging>
+  <version>1.0-SNAPSHOT</version>
+
   <name>FragDemo</name>
+  <description>Android Fragment Demonstration</description>
+
+  <organization>
+    <name>Digital Burro, INC</name>
+    <url>http://www.digiburo.com</url>
+  </organization>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
