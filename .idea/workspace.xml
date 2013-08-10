@@ -12,10 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2b11871-2dbf-40e2-9284-e75752c63ee3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fragment-demo/AndroidManifest.xml" afterPath="$PROJECT_DIR$/fragment-demo/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/Constants.java" afterPath="$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/content/DataBaseHelper.java" afterPath="$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/content/DataBaseHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/content/DummyTable.java" afterPath="$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/content/DummyTable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FragmentDemo.iws" />
@@ -602,7 +598,11 @@
       <created>1376109185076</created>
       <updated>1376109185076</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update from studio">
+      <created>1376113859022</created>
+      <updated>1376113859022</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
