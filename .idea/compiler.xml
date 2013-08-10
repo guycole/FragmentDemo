@@ -7,6 +7,8 @@
       <directory url="file://$PROJECT_DIR$/FragDemo/target/generated-sources/aidl" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/FragmentDemo/target/generated-sources/r" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/FragmentDemo/target/generated-sources/aidl" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/fragment-demo/target/generated-sources/r" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/fragment-demo/target/generated-sources/aidl" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
@@ -29,6 +31,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="FragDemo" />
+        <module name="fragment-demo" />
         <module name="FragmentDemo" />
       </profile>
     </annotationProcessing>

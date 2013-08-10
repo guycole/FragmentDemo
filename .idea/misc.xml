@@ -5,6 +5,7 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="android" url="file://$PROJECT_DIR$/FragDemo" />
+    <file type="android" url="file://$PROJECT_DIR$/fragment-demo" />
     <file type="android" url="file://$PROJECT_DIR$/FragmentDemo" />
   </component>
   <component name="MavenProjectsManager">
@@ -12,6 +13,7 @@
       <list>
         <option value="$PROJECT_DIR$/FragDemo/pom.xml" />
         <option value="$PROJECT_DIR$/FragmentDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/fragment-demo/pom.xml" />
       </list>
     </option>
   </component>
