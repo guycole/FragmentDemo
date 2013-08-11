@@ -13,7 +13,7 @@ import com.digiburo.fragdemo.utility.LogFacade;
 import com.digiburo.fragdemo.R;
 
 /**
- * support listview of String items
+ * support Listview of String items
  *
  * @author gsc
  */
