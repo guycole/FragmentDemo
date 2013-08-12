@@ -89,7 +89,7 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
     String[] columnz = {DummyTable.Columns.NAME};
     int[] rowAttrz = {R.id.textName01};
 
-    adapter = new SimpleCursorAdapter(getActivity(), R.layout.row_four, null, columnz, rowAttrz, 0);
+    adapter = new CustomCursorAdapter(getActivity(), R.layout.row_four, null, columnz, rowAttrz);
 
     getLoaderManager().initLoader(0,  null, this);
   }
@@ -155,7 +155,7 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
   }
 
   //
-  private SimpleCursorAdapter adapter;
+  private CustomCursorAdapter adapter;
 
   //
   public static final String LOG_TAG = FourFragment.class.getName();

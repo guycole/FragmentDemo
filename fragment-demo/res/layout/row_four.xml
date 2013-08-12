@@ -3,15 +3,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:orientation="horizontal"
+  android:orientation="vertical"
   android:padding="3dp">
 
-  <ImageView
-    android:id="@+id/imageThumbNail01"
-    android:src="@drawable/skull64"
-    android:contentDescription="@string/label_thumbnail_content_description"
-    android:layout_width="75dip"
-    android:layout_height="100dip"/>
+  <RadioGroup
+    android:id="@+id/radioGroup01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+  <RadioButton
+    android:id="@+id/radioButton01"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:text="1"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"/>
+
+  <RadioButton
+    android:id="@+id/radioButton02"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:text="2"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"/>
+
+  <RadioButton
+    android:id="@+id/radioButton03"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:text="3"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"/>
+  </RadioGroup>
 
   <TextView
     android:id="@+id/textName01"
@@ -22,5 +47,6 @@
     android:typeface="sans"
     android:layout_gravity="center_vertical"
     android:layout_height="wrap_content"
-    android:layout_width="fill_parent"/>
+    android:layout_width="wrap_content"/>
+
 </LinearLayout>
