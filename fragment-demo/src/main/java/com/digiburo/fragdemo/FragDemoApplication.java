@@ -27,7 +27,7 @@ public class FragDemoApplication extends Application {
     // generate some random database items
     Random random = new Random();
 
-    for (int ii = 0; ii < 100; ii++) {
+    for (int ii = 0; ii < 10; ii++) {
       DummyModel model = new DummyModel();
       model.setDefault();
       model.setName(Long.toHexString(random.nextLong()));

@@ -13,29 +13,29 @@
     android:gravity="center"
     android:orientation="horizontal" >
 
-  <RadioButton
-    android:id="@+id/radioButton01"
-    android:focusable="false"
-    android:focusableInTouchMode="false"
-    android:text="1"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"/>
+    <RadioButton
+      android:id="@+id/radioButton01"
+      android:focusable="false"
+      android:focusableInTouchMode="false"
+      android:text="1"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"/>
 
-  <RadioButton
-    android:id="@+id/radioButton02"
-    android:focusable="false"
-    android:focusableInTouchMode="false"
-    android:text="2"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"/>
+    <RadioButton
+      android:id="@+id/radioButton02"
+      android:focusable="false"
+      android:focusableInTouchMode="false"
+      android:text="2"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"/>
 
-  <RadioButton
-    android:id="@+id/radioButton03"
-    android:focusable="false"
-    android:focusableInTouchMode="false"
-    android:text="3"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"/>
+    <RadioButton
+      android:id="@+id/radioButton03"
+      android:focusable="false"
+      android:focusableInTouchMode="false"
+      android:text="3"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"/>
   </RadioGroup>
 
   <TextView

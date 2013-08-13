@@ -15,7 +15,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
   
   //
   public DataBaseHelper(Context context) {
-    super(context, DATABASE_FILE_NAME, null, DATABASE_VERSION);
+//    super(context, DATABASE_FILE_NAME, null, DATABASE_VERSION);
+    super(context, context.getExternalFilesDir(null).getAbsolutePath() + "/" + DATABASE_FILE_NAME, null, DATABASE_VERSION);
   }
 
   /* (non-Javadoc)

@@ -36,6 +36,8 @@ public class DummyTable implements DataBaseTableIf {
  
     // column names
     public static final String NAME = "name";
+    public static final String RADIO = "radio";
+    public static final String TYPE = "type";
   }
   
   //
@@ -56,7 +58,9 @@ public class DummyTable implements DataBaseTableIf {
   //
   public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " ("
     + Columns._ID + " INTEGER PRIMARY KEY,"
-    + Columns.NAME + " TEXT NOT NULL"
+    + Columns.NAME + " TEXT NOT NULL,"
+    + Columns.RADIO + " INTEGER NOT NULL,"
+    + Columns.TYPE + " TEXT NOT NULL"
     + ");";
 
   //
@@ -65,6 +69,8 @@ public class DummyTable implements DataBaseTableIf {
   static {
     PROJECTION_MAP.put(DummyTable.Columns._ID, DummyTable.Columns._ID);
     PROJECTION_MAP.put(DummyTable.Columns.NAME, DummyTable.Columns.NAME);
+    PROJECTION_MAP.put(DummyTable.Columns.RADIO, DummyTable.Columns.RADIO);
+    PROJECTION_MAP.put(DummyTable.Columns.TYPE, DummyTable.Columns.TYPE);
   }
 }
 /**
