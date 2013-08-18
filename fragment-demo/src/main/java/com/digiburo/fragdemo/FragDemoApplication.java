@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.digiburo.fragdemo.content.DummyModel;
 import com.digiburo.fragdemo.content.DummyTable;
+import com.digiburo.fragdemo.utility.LegalRowType;
 import com.digiburo.fragdemo.utility.LogFacade;
 
 import java.util.Random;
@@ -31,6 +32,18 @@ public class FragDemoApplication extends Application {
       DummyModel model = new DummyModel();
       model.setDefault();
       model.setName(Long.toHexString(random.nextLong()));
+
+      switch(ii%2) {
+        case 0:
+          model.setRowType(LegalRowType.NAME_ONLY);
+          break;
+        case 1:
+          model.setRowType(LegalRowType.NAME_AND_RADIO);
+          int radioButton = 1+(ii%3);
+          model.setRadioButton(radioButton);
+          break;
+      }
+
       Uri result = getContentResolver().insert(DummyTable.CONTENT_URI, model.toContentValues());
       System.out.println(model.getId() + ":" + model.getName() + ":" + result);
     }

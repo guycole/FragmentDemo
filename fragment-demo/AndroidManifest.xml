@@ -20,7 +20,7 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name=".ui.AboutActivity"/>
+    <activity android:name=".ui.MenuActivity"/>
 
     <provider android:name=".content.DataBaseProvider" android:authorities="com.digiburo.fragdemo.authority"/>
   </application>

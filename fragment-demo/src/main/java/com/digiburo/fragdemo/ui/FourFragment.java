@@ -1,7 +1,6 @@
 package com.digiburo.fragdemo.ui;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.app.ListFragment;
 import android.app.LoaderManager;
 import android.content.CursorLoader;
@@ -12,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 
 import com.digiburo.fragdemo.content.DataBaseTableIf;
 import com.digiburo.fragdemo.content.DummyTable;
@@ -67,9 +65,9 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
     LogFacade.debug(LOG_TAG, "click:" + position + ":" + id);
   }
 
-    /**
-     * mandatory empty ctor
-     */
+  /**
+   * mandatory empty ctor
+   */
   public FourFragment() {
     //empty
   }
@@ -89,7 +87,7 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
     String[] columnz = {DummyTable.Columns.NAME};
     int[] rowAttrz = {R.id.textName01};
 
-    adapter = new CustomCursorAdapter(getActivity(), R.layout.row_four, null, columnz, rowAttrz);
+    adapter = new CustomCursorAdapter(getActivity(), R.layout.row_name, null, columnz, rowAttrz);
 
     getLoaderManager().initLoader(0,  null, this);
   }

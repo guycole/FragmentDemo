@@ -1,12 +1,15 @@
 package com.digiburo.fragdemo.ui;
 
 import android.app.ActionBar;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.digiburo.fragdemo.utility.LegalOptionMenuType;
 import com.digiburo.fragdemo.utility.LogFacade;
 import com.digiburo.fragdemo.R;
 
@@ -74,8 +77,8 @@ public class MainActivity extends Activity implements StateDetailListener {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
     LogFacade.entry(LOG_TAG, "onCreate");
+    super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
     ActionBar actionBar = getActionBar();
@@ -107,19 +110,22 @@ public class MainActivity extends Activity implements StateDetailListener {
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     LogFacade.entry(LOG_TAG, "onOptionsItemSelected:" + item.getItemId());
+
+    Intent intent = new Intent(this, MenuActivity.class);
+
     switch (item.getItemId()) {
       case R.id.menu_about:
-        LogFacade.debug(LOG_TAG, "menu about");
-        startActivity(new Intent(this, AboutActivity.class));
-        return(true);
+        intent.setAction(LegalOptionMenuType.ABOUT.getName());
+        break;
       case R.id.menu_settings:
-        LogFacade.debug(LOG_TAG, "menu settings");
-//TODO
-//        startActivity(new Intent(this, SettingsActivity.class));
-        return(true);
+        intent.setAction(LegalOptionMenuType.SETTINGS.getName());
+        break;
       default:
         return super.onOptionsItemSelected(item);
     }
+
+    startActivity(intent);
+    return(true);
   }
 
   //

@@ -16,16 +16,19 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
+import com.digiburo.fragdemo.content.ContentFacade;
+import com.digiburo.fragdemo.content.DummyModel;
 import com.digiburo.fragdemo.utility.LogFacade;
 import com.digiburo.fragdemo.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Service the "three" tab - simple scrolling list w/no loader
+ * Service the "three" tab - scrolling list w/no loader
  * Supports short and long press on row
  * Header and footer on list view
- * Custom row adapter
+ * Custom row adapter w/radio buttons
  */
 public class ThreeFragment extends ListFragment {
 
@@ -46,8 +49,6 @@ public class ThreeFragment extends ListFragment {
   @Override
   public void onListItemClick(ListView listView, View view, int position, long id) {
     LogFacade.entry(LOG_TAG, "click:" + position + ":" + id);
-    stateDetailListener.onStateSelect((String) customArrayAdapter.getItem(position-1), TabHelper.TAG_THREE);
-    returnFromDetailFlag = true;
   }
 
   /**
@@ -83,15 +84,11 @@ public class ThreeFragment extends ListFragment {
     super.onCreate(savedInstanceState);
     LogFacade.entry(LOG_TAG, "onCreate");
 
-    //
-    ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.us_states, android.R.layout.simple_list_item_1);
+    // read from content provider
+    ContentFacade contentFacade = new ContentFacade();
+    List<DummyModel> list = contentFacade.getDummyList(getActivity());
 
-    ArrayList<String> arrayList = new ArrayList<String>();
-    for (int ii = 0; ii < arrayAdapter.getCount(); ii++) {
-      arrayList.add((String) arrayAdapter.getItem(ii));
-    }
-
-    customArrayAdapter = new CustomArrayAdapter(getActivity(), arrayList);
+    customArrayAdapter = new CustomArrayAdapter(getActivity(), list);
   }
 
   @Override
