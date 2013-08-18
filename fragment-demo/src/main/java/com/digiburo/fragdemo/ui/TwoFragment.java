@@ -39,7 +39,7 @@ public class TwoFragment extends ListFragment {
   @Override
   public void onListItemClick(ListView listView, View view, int position, long id) {
     LogFacade.entry(LOG_TAG, "click:" + position + ":" + id);
-    stateDetailListener.onStateSelect((String) arrayAdapter.getItem(position), TabHelper.TAG_TWO);
+    twoListener.onStateSelect((String) arrayAdapter.getItem(position), TabHelper.TAG_TWO);
     returnFromDetailFlag = true;
   }
 
@@ -61,6 +61,8 @@ public class TwoFragment extends ListFragment {
     AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
     LogFacade.entry(LOG_TAG, "on context item select:" + item + ":" + info.id + ":" + arrayAdapter.getItem(info.position));
 
+    twoListener.createStateDeleteDialog(R.string.alert_delete_title, R.string.alert_delete_message);
+
     return super.onContextItemSelected(item);
   }
 
@@ -68,7 +70,7 @@ public class TwoFragment extends ListFragment {
   public void onAttach(Activity activity) {
     super.onAttach(activity);
     LogFacade.entry(LOG_TAG, "onAttach");
-    stateDetailListener = (StateDetailListener) activity;
+    twoListener = (TwoListener) activity;
   }
 
   @Override
@@ -112,7 +114,7 @@ public class TwoFragment extends ListFragment {
 
     if (returnFromDetailFlag) {
       returnFromDetailFlag = false;
-      stateDetailListener.onStateDeselect(TabHelper.TAG_TWO);
+      twoListener.onStateDeselect(TabHelper.TAG_TWO);
     }
   }
 
@@ -150,8 +152,8 @@ public class TwoFragment extends ListFragment {
   //
   private ArrayAdapter<CharSequence> arrayAdapter;
 
-  // handle transition events between selected item and detail
-  private StateDetailListener stateDetailListener;
+  // handle delete dialog and transition events between selected item and detail
+  private TwoListener twoListener;
 
   // true, returning from detail fragment
   private boolean returnFromDetailFlag = false;

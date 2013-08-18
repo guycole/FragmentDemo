@@ -13,6 +13,11 @@
   <string name="about_label_product">Device Product</string>
   <string name="about_label_unknown">Unknown</string>
 
+  <string name="alert_delete_message">Delete Message</string>
+  <string name="alert_delete_no">No</string>
+  <string name="alert_delete_title">Delete Title</string>
+  <string name="alert_delete_yes">Yes</string>
+
   <string name="button_save">Save</string>
 
   <string name="detail_label_state">State</string>

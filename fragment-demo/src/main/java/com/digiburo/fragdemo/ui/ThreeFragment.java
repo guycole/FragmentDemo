@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -21,7 +20,6 @@ import com.digiburo.fragdemo.content.DummyModel;
 import com.digiburo.fragdemo.utility.LogFacade;
 import com.digiburo.fragdemo.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -76,7 +74,7 @@ public class ThreeFragment extends ListFragment {
   public void onAttach(Activity activity) {
     super.onAttach(activity);
     LogFacade.entry(LOG_TAG, "onAttach");
-    stateDetailListener = (StateDetailListener) activity;
+    stateDetailListener = (TwoListener) activity;
   }
 
   @Override
@@ -191,7 +189,7 @@ public class ThreeFragment extends ListFragment {
   private CustomArrayAdapter customArrayAdapter;
 
   // handle transition events between selected item and detail
-  private StateDetailListener stateDetailListener;
+  private TwoListener stateDetailListener;
 
   // true, returning from detail fragment
   private boolean returnFromDetailFlag = false;

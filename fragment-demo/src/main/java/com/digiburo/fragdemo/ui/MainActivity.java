@@ -1,8 +1,6 @@
 package com.digiburo.fragdemo.ui;
 
 import android.app.ActionBar;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
@@ -16,7 +14,7 @@ import com.digiburo.fragdemo.R;
 /**
  *
  */
-public class MainActivity extends Activity implements StateDetailListener {
+public class MainActivity extends Activity implements TwoListener {
 
   /**
    * Remove state detail fragment
@@ -37,6 +35,36 @@ public class MainActivity extends Activity implements StateDetailListener {
     LogFacade.entry(LOG_TAG, "onStateSelect:" + stateName + ":" + tabTag);
     tabHelper.onStateSelect(stateName, tabTag);
     LogFacade.exit(LOG_TAG, "onStateSelect");
+  }
+
+  /**
+   * display delete dialog
+   * @param title
+   * @param message
+   */
+  public void createStateDeleteDialog(int title, int message) {
+    LogFacade.entry(LOG_TAG, "createStateDeleteDialog");
+
+    DeleteDialogFragment ddf = DeleteDialogFragment.newInstance(R.string.alert_delete_title, R.string.alert_delete_message);
+    ddf.show(getFragmentManager(), "deleteDialog");
+
+    LogFacade.exit(LOG_TAG, "createStateDeleteDialog");
+  }
+
+  /**
+   * perform delete
+   */
+  public void onStateDeleteYes() {
+    LogFacade.entry(LOG_TAG, "onStateDeleteYes");
+    LogFacade.exit(LOG_TAG, "onStateDeleteYes");
+  }
+
+  /**
+   * cancel delete
+   */
+  public void onStateDeleteNo() {
+    LogFacade.entry(LOG_TAG, "onStateDeleteNo");
+    LogFacade.exit(LOG_TAG, "onStateDeleteNo");
   }
 
   @Override
