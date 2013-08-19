@@ -48,7 +48,7 @@ public class DeleteDialogFragment extends DialogFragment {
     builder.setNegativeButton(R.string.alert_delete_no, new DialogInterface.OnClickListener() {
       public void onClick(DialogInterface dialog, int id) {
       LogFacade.debug(LOG_TAG, "no noted:" + id);
-        ((MainActivity) getActivity()).onStateDeleteNo();
+      ((MainActivity) getActivity()).onStateDeleteNo();
       }
     });
 
