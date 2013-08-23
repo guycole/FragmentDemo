@@ -3,7 +3,11 @@ package com.digiburo.fragdemo.ui;
 import android.app.Activity;
 import android.app.ListFragment;
 import android.app.LoaderManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.CursorLoader;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -12,13 +16,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.digiburo.fragdemo.Constants;
 import com.digiburo.fragdemo.content.DataBaseTableIf;
 import com.digiburo.fragdemo.content.DummyTable;
 import com.digiburo.fragdemo.utility.LogFacade;
 import com.digiburo.fragdemo.R;
 
 /**
- *
+ * Service the "four" tab - scrolling list w/loader and custom cursor adapter
+ * Short press creates BusyCancelDialog
+ * BusyCancelDialog communicates via Broadcast Intent
  */
 public class FourFragment extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor>  {
 
@@ -63,6 +70,9 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
   @Override
   public void onListItemClick(ListView listView, View view, int position, long id) {
     LogFacade.debug(LOG_TAG, "click:" + position + ":" + id);
+
+    BusyCancelDialog busyCancelDialog = new BusyCancelDialog();
+    busyCancelDialog.show(getFragmentManager(), "dialogTag");
   }
 
   /**
@@ -120,12 +130,16 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
   public void onResume() {
     super.onResume();
     LogFacade.entry(LOG_TAG, "onResume");
+
+    getActivity().registerReceiver(broadcastReceiver, new IntentFilter(Constants.ACTION_CANCEL_SOMETHING));
   }
 
   @Override
   public void onPause() {
     super.onPause();
     LogFacade.entry(LOG_TAG, "onPause");
+
+    getActivity().unregisterReceiver(broadcastReceiver);
   }
 
   @Override
@@ -151,6 +165,16 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
     super.onDetach();
     LogFacade.entry(LOG_TAG, "onDetach");
   }
+
+  /**
+   * catch cancel events
+   */
+  private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+      LogFacade.entry(LOG_TAG, "onReceive:cancel noted");
+    }
+  };
 
   //
   private CustomCursorAdapter adapter;

@@ -18,10 +18,13 @@
   <string name="alert_delete_title">Delete Title</string>
   <string name="alert_delete_yes">Yes</string>
 
+  <string name="button_cancel">Cancel</string>
   <string name="button_save">Save</string>
 
   <string name="detail_label_state">State</string>
   <string name="detail_label_unknown">Unknown</string>
+
+  <string name="dialog_busy_cancel">Dialog Busy Cancel Title</string>
 
   <string name="hint_comment">Comment</string>
 

@@ -15,6 +15,9 @@ public class Constants {
   public static final String AUTHORITY = "com.digiburo.fragdemo.authority";
 
   //
+  public static final String ACTION_CANCEL_SOMETHING = "com.digiburo.fragdemo.cancel.something";
+
+  //
   public static final String DB_DEFAULT_NAME = "defaultName";
 
 }
