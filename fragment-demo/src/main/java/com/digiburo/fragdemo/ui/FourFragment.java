@@ -57,6 +57,12 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
     LogFacade.entry(LOG_TAG, "onLoadFinished:" + loader.toString());
     adapter.swapCursor(data);
     adapter.notifyDataSetChanged();
+
+    if (data == null) {
+      LogFacade.debug(LOG_TAG, "load finished w/null cursor");
+    } else {
+      LogFacade.debug(LOG_TAG, "load finished w/cursor size:" + data.getCount() + ":column size:" + data.getColumnCount());
+    }
   }
 
   /**

@@ -81,6 +81,8 @@ public class CustomCursorAdapter extends SimpleCursorAdapter {
    * @return populated model or null if fail
    */
   private DummyModel readFromCursor(int position) {
+    LogFacade.entry(LOG_TAG, "readFromCursor:" + position);
+
     Cursor cursor = getCursor();
     if (!cursor.moveToPosition(position)) {
       LogFacade.error(LOG_TAG, "moveTo failure for:" + position);
