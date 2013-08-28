@@ -1,6 +1,9 @@
 package com.digiburo.fragdemo.ui;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
@@ -71,8 +74,16 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
   public void onListItemClick(ListView listView, View view, int position, long id) {
     LogFacade.debug(LOG_TAG, "click:" + position + ":" + id);
 
+    FragmentManager fragmentManager = getFragmentManager();
+    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+    Fragment oldFragment = fragmentManager.findFragmentByTag(DIALOG_CANCEL);
+    if (oldFragment != null) {
+      fragmentTransaction.remove(oldFragment);
+    }
+
     BusyCancelDialog busyCancelDialog = new BusyCancelDialog();
-    busyCancelDialog.show(getFragmentManager(), "dialogTag");
+    busyCancelDialog.show(fragmentManager, DIALOG_CANCEL);
   }
 
   /**
@@ -184,6 +195,9 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
 
   //
   public static final int LOADER_ID = 314156;
+
+  //
+  public static final String DIALOG_CANCEL = "DIALOG_CANCEL";
 
   //
   public static final String LOG_TAG = FourFragment.class.getName();
