@@ -12,9 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2b11871-2dbf-40e2-9284-e75752c63ee3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/Constants.java" afterPath="$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/Constants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/ui/FourFragment.java" afterPath="$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/ui/FourFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fragment-demo/res/values/strings.xml" afterPath="$PROJECT_DIR$/fragment-demo/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FragmentDemo.iws" />
@@ -79,81 +77,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dialog_busy_cancel.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fragment-demo/res/layout/dialog_busy_cancel.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="-6.148148" vertical-offset="59" max-vertical-offset="405">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fragment-demo/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="60" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="1290">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FourFragment.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FourFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/ui/FourFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="4" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0" vertical-offset="2176" max-vertical-offset="2595">
-              <folding>
-                <element signature="e#4452#4619#0" expanded="true" />
-                <element signature="e#4614#4615#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ThreeFragment.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/ui/ThreeFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="37" selection-start="679" selection-end="847" vertical-scroll-proportion="0.28639618" vertical-offset="0" max-vertical-offset="2805">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BusyCancelDialog.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/ui/BusyCancelDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="5" selection-start="1545" selection-end="1545" vertical-scroll-proportion="0.0" vertical-offset="916" max-vertical-offset="1335">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="77" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/ui/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="13" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0" vertical-offset="1584" max-vertical-offset="2505">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomArrayAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/ui/CustomArrayAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="3" selection-start="4485" selection-end="4526" vertical-scroll-proportion="0.0" vertical-offset="1758" max-vertical-offset="2325">
+            <state line="65" column="0" selection-start="1957" selection-end="1957" vertical-scroll-proportion="-0.8396947" vertical-offset="1005" max-vertical-offset="2640">
               <folding />
             </state>
           </provider>
@@ -251,7 +178,6 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
     <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="690" />
@@ -282,6 +208,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -356,23 +283,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FragmentDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragment-demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -599,13 +511,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="22" width="1280" height="690" extended-state="6" />
+    <frame x="0" y="22" width="1280" height="690" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22890624" sideWeight="0.6739496" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -626,6 +537,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22890624" sideWeight="0.6739496" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3996479" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -705,31 +617,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="13" selection-start="368" selection-end="368" vertical-scroll-proportion="0.33333334" vertical-offset="51" max-vertical-offset="1890">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fragment-demo/res/layout/dialog_busy_cancel.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="-6.148148" vertical-offset="59" max-vertical-offset="405">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="77" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fragment-demo/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="60" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="1290">
           <folding />
         </state>
       </provider>
@@ -744,25 +639,35 @@
     <entry file="file://$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/ui/BusyCancelDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="5" selection-start="1545" selection-end="1545" vertical-scroll-proportion="0.0" vertical-offset="506" max-vertical-offset="1335">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/ui/FourFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="4" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2595">
-          <folding>
-            <element signature="e#4452#4619#0" expanded="true" />
-            <element signature="e#4614#4615#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/ui/ThreeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="37" selection-start="679" selection-end="847" vertical-scroll-proportion="0.28639618" vertical-offset="0" max-vertical-offset="2805">
+        <state line="28" column="37" selection-start="679" selection-end="847" vertical-scroll-proportion="0.026455026" vertical-offset="105" max-vertical-offset="2805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fragment-demo/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="60" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.41975307" vertical-offset="152" max-vertical-offset="1290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fragment-demo/res/layout/dialog_busy_cancel.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="0.41666666" vertical-offset="0" max-vertical-offset="540" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fragment-demo/src/main/java/com/digiburo/fragdemo/ui/FourFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="0" selection-start="1957" selection-end="1957" vertical-scroll-proportion="-0.8396947" vertical-offset="1005" max-vertical-offset="2640">
           <folding />
         </state>
       </provider>

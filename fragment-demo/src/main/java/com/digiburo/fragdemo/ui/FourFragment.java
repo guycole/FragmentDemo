@@ -33,7 +33,7 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
    * LoaderCallback
    */
   public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-    LogFacade.entry(LOG_TAG, "onCreateLoader");
+    LogFacade.entry(LOG_TAG, "onCreateLoader:" + id);
 
     DataBaseTableIf table = new DummyTable();
 
@@ -92,14 +92,6 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     LogFacade.entry(LOG_TAG, "onCreate");
-
-    // pacifiers
-    String[] columnz = {DummyTable.Columns.NAME};
-    int[] rowAttrz = {R.id.textName01};
-
-    adapter = new CustomCursorAdapter(getActivity(), R.layout.row_name, null, columnz, rowAttrz);
-
-    getLoaderManager().initLoader(0,  null, this);
   }
 
   @Override
@@ -117,7 +109,15 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
     LogFacade.entry(LOG_TAG, "onActivityCreated");
 
     //
+    setHasOptionsMenu(false);
+
+    // empty adapter - see onCreateLoader
+    int[] rowAttrz = {R.id.textName01};
+    String[] columnz = {DummyTable.Columns.NAME};
+    adapter = new CustomCursorAdapter(getActivity(), R.layout.row_name, null, columnz, rowAttrz);
     setListAdapter(adapter);
+
+    getLoaderManager().initLoader(LOADER_ID,  null, this);
   }
 
   @Override
@@ -172,12 +172,18 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
   private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
     @Override
     public void onReceive(Context context, Intent intent) {
-      LogFacade.entry(LOG_TAG, "onReceive:cancel noted");
+    LogFacade.entry(LOG_TAG, "onReceive:cancel noted");
     }
   };
 
   //
   private CustomCursorAdapter adapter;
+
+  //
+  private String cursorFilter;
+
+  //
+  public static final int LOADER_ID = 314156;
 
   //
   public static final String LOG_TAG = FourFragment.class.getName();
