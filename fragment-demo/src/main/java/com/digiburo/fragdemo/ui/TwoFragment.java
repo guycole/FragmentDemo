@@ -13,8 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.digiburo.fragdemo.utility.LogFacade;
 import com.digiburo.fragdemo.R;
+import com.digiburo.fragdemo.utility.LogFacade;
 
 /**
  * Service the "two" tab - simple scrolling list w/no loader

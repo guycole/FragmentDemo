@@ -2,13 +2,11 @@ package com.digiburo.fragdemo.ui;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.TextView;
 
 import com.digiburo.fragdemo.R;
 import com.digiburo.fragdemo.utility.LogFacade;

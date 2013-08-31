@@ -1,7 +1,5 @@
 package com.digiburo.fragdemo.ui;
 
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.digiburo.fragdemo.R;
 import com.digiburo.fragdemo.content.DummyModel;
 import com.digiburo.fragdemo.utility.LogFacade;
-import com.digiburo.fragdemo.R;
+
+import java.util.List;
 
 /**
  * support Listview of DummyModel items
@@ -45,7 +45,7 @@ public class CustomArrayAdapter extends ArrayAdapter<DummyModel> {
 
     int result = 0;
 
-    DummyModel model = (DummyModel) getItem(position);
+    DummyModel model = getItem(position);
     switch(model.getRowType()) {
       case NAME_AND_RADIO:
         result = 0;
@@ -63,8 +63,8 @@ public class CustomArrayAdapter extends ArrayAdapter<DummyModel> {
     DummyModel item = getItem(position);
     LogFacade.entry(LOG_TAG, "getView:" + position + ":" + item.getName() + ":" + item.getRowType() + ":" + item.getRadioButton());
 
-    View rowView = null;
-    ViewHolder holder = null;
+    View rowView;
+    ViewHolder holder;
 
     if (convertView == null) {
       LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -76,6 +76,8 @@ public class CustomArrayAdapter extends ArrayAdapter<DummyModel> {
         case NAME_ONLY:
           rowView = inflater.inflate(R.layout.row_name, null);
           break;
+        default:
+          throw new IllegalArgumentException("unsupported row type");
       }
 
       holder = new ViewHolder(rowView);
@@ -92,7 +94,7 @@ public class CustomArrayAdapter extends ArrayAdapter<DummyModel> {
       case NAME_ONLY:
         break;
       case NAME_AND_RADIO:
-        holder.radioGroup.setTag(new Integer(position));
+        holder.radioGroup.setTag(position);
 
         switch(item.getRadioButton()) {
           case 1:
@@ -124,7 +126,7 @@ public class CustomArrayAdapter extends ArrayAdapter<DummyModel> {
           public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
             LogFacade.entry(LOG_TAG, "onCheckedChange:" + checkedId + ":" + radioGroup.getTag());
             int position = (Integer) radioGroup.getTag();
-            DummyModel model = (DummyModel) getItem(position);
+            DummyModel model = getItem(position);
 
             switch(checkedId) {
               case R.id.radioButton01:

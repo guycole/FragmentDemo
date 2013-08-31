@@ -46,8 +46,8 @@ public class DataBaseProvider extends ContentProvider {
     LogFacade.entry(LOG_TAG, "delete:" + uri);    
     
     SQLiteDatabase db = dbHelper.getWritableDatabase();
-    int count = 0;
-    String id = "";
+    int count;
+    String id;
 
     switch (uriMatcher.match(uri)) {
     case URI_MATCH_DUMMY:
@@ -73,7 +73,7 @@ public class DataBaseProvider extends ContentProvider {
     LogFacade.entry(LOG_TAG, "insert:" + uri);
     
     SQLiteDatabase db = dbHelper.getWritableDatabase();
-    long rowId = 0;
+    long rowId;
     Uri result = null;
     
     switch (uriMatcher.match(uri)) {
@@ -154,8 +154,8 @@ public class DataBaseProvider extends ContentProvider {
     LogFacade.entry(LOG_TAG, "update:" + uri);
     
     SQLiteDatabase db = dbHelper.getWritableDatabase();
-    int count = 0;
-    String id = "";
+    int count;
+    String id;
 
     switch (uriMatcher.match(uri)) {
     case URI_MATCH_DUMMY:

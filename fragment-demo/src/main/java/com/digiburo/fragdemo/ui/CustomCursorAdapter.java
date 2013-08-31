@@ -5,13 +5,11 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioGroup;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import com.digiburo.fragdemo.R;
 import com.digiburo.fragdemo.content.DummyModel;
-import com.digiburo.fragdemo.content.DummyTable;
 import com.digiburo.fragdemo.utility.LogFacade;
 
 /**
@@ -24,13 +22,11 @@ public class CustomCursorAdapter extends SimpleCursorAdapter {
   /**
    *
    * @param context
-   * @param layout
-   * @param cursor
    * @param from
    * @param to
    */
-  public CustomCursorAdapter(Context context, int layout, Cursor cursor, String[] from, int[] to) {
-    super(context, layout, cursor, from, to, 0);
+  public CustomCursorAdapter(Context context, String[] from, int[] to) {
+    super(context, R.layout.row_name, null, from, to, 0);
     LogFacade.entry(LOG_TAG, "ctor");
     this.context = context;
   }
@@ -48,11 +44,11 @@ public class CustomCursorAdapter extends SimpleCursorAdapter {
 
     final DummyModel currentModel = readFromCursor(position);
     if (currentModel == null) {
-      LogFacade.error(LOG_TAG, "readFromCursor:" + position + ":failure noted");
+      throw new IllegalArgumentException("readFromCursor:" + position + ":failure noted");
     }
 
-    View view = null;
-    ViewHolder holder = null;
+    View view;
+    ViewHolder holder;
 
     if (convertView == null) {
       LogFacade.debug(LOG_TAG, "getView w/null convertView");

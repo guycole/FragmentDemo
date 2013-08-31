@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.digiburo.fragdemo.utility.LogFacade;
 import com.digiburo.fragdemo.R;
+import com.digiburo.fragdemo.utility.LogFacade;
 
 /**
  * State form detail

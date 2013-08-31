@@ -20,10 +20,10 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.digiburo.fragdemo.Constants;
+import com.digiburo.fragdemo.R;
 import com.digiburo.fragdemo.content.DataBaseTableIf;
 import com.digiburo.fragdemo.content.DummyTable;
 import com.digiburo.fragdemo.utility.LogFacade;
-import com.digiburo.fragdemo.R;
 
 /**
  * Service the "four" tab - scrolling list w/loader and custom cursor adapter
@@ -131,7 +131,7 @@ public class FourFragment extends ListFragment implements LoaderManager.LoaderCa
     // empty adapter - see onCreateLoader
     int[] rowAttrz = {R.id.textName01};
     String[] columnz = {DummyTable.Columns.NAME};
-    adapter = new CustomCursorAdapter(getActivity(), R.layout.row_name, null, columnz, rowAttrz);
+    adapter = new CustomCursorAdapter(getActivity(), columnz, rowAttrz);
     setListAdapter(adapter);
 
     getLoaderManager().initLoader(LOADER_ID,  null, this);

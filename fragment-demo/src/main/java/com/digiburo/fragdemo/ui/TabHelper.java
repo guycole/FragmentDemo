@@ -6,8 +6,8 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 
-import com.digiburo.fragdemo.utility.LogFacade;
 import com.digiburo.fragdemo.R;
+import com.digiburo.fragdemo.utility.LogFacade;
 
 /**
  * React to ActionBar tab events
@@ -215,7 +215,7 @@ public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackS
   }
 
   //
-  private Activity mainActivity;
+  private final Activity mainActivity;
 
   //
   private ActionBar.Tab oneTab;
@@ -224,10 +224,10 @@ public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackS
   private ActionBar.Tab fourTab;
 
   //
-  private OneFragment oneFragment;
-  private TwoFragment twoFragment;
-  private ThreeFragment threeFragment;
-  private FourFragment fourFragment;
+  private final OneFragment oneFragment;
+  private final TwoFragment twoFragment;
+  private final ThreeFragment threeFragment;
+  private final FourFragment fourFragment;
 
   private StateDetailFragment stateDetailFragment;
 

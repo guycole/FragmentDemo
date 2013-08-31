@@ -15,10 +15,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
+import com.digiburo.fragdemo.R;
 import com.digiburo.fragdemo.content.ContentFacade;
 import com.digiburo.fragdemo.content.DummyModel;
 import com.digiburo.fragdemo.utility.LogFacade;
-import com.digiburo.fragdemo.R;
 
 import java.util.List;
 

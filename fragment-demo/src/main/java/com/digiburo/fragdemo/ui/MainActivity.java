@@ -1,18 +1,18 @@
 package com.digiburo.fragdemo.ui;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.digiburo.fragdemo.R;
 import com.digiburo.fragdemo.utility.LegalOptionMenuType;
 import com.digiburo.fragdemo.utility.LogFacade;
-import com.digiburo.fragdemo.R;
 
 /**
  *
