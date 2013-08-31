@@ -1,6 +1,9 @@
 package com.digiburo.fragdemo.ui;
 
 import android.app.ActionBar;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
@@ -44,6 +47,14 @@ public class MainActivity extends Activity implements TwoListener {
    */
   public void createStateDeleteDialog(int title, int message) {
     LogFacade.entry(LOG_TAG, "createStateDeleteDialog");
+
+    FragmentManager fragmentManager = getFragmentManager();
+    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+    Fragment oldFragment = fragmentManager.findFragmentByTag(DIALOG_DELETE);
+    if (oldFragment != null) {
+      fragmentTransaction.remove(oldFragment);
+    }
 
     DeleteDialogFragment ddf = DeleteDialogFragment.newInstance(R.string.alert_delete_title, R.string.alert_delete_message);
     ddf.show(getFragmentManager(), "deleteDialog");
@@ -161,6 +172,9 @@ public class MainActivity extends Activity implements TwoListener {
 
   //
   public static final String SELECTED_TAB_NDX = "SELECTED_TAB_NDX";
+
+  //
+  public static final String DIALOG_DELETE = "DIALOG_DELETE";
 
   //
   public static final String LOG_TAG = MainActivity.class.getName();
