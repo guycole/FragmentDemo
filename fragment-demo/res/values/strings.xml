@@ -32,6 +32,7 @@
   <string name="label_fragment_two">Fragment Two</string>
   <string name="label_fragment_three">Fragment Three</string>
   <string name="label_fragment_four">Fragment Four</string>
+  <string name="label_fragment_five">Fragment Five</string>
 
   <string name="label_header_three">Header Three</string>
 
@@ -45,6 +46,7 @@
   <string name="menu_application_bar_two">Two</string>
   <string name="menu_application_bar_three">Three</string>
   <string name="menu_application_bar_four">Four</string>
+  <string name="menu_application_bar_five">Five</string>
 
   <string name="menu_context_delete">Delete</string>
 

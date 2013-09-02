@@ -21,6 +21,7 @@ public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackS
     twoFragment = (TwoFragment) Fragment.instantiate(mainActivity, TwoFragment.class.getName());
     threeFragment = (ThreeFragment) Fragment.instantiate(mainActivity, ThreeFragment.class.getName());
     fourFragment = (FourFragment) Fragment.instantiate(mainActivity, FourFragment.class.getName());
+    fiveFragment = (FiveFragment) Fragment.instantiate(mainActivity, FiveFragment.class.getName());
 
     stateDetailFragment = (StateDetailFragment) Fragment.instantiate(mainActivity, StateDetailFragment.class.getName());
   }
@@ -48,6 +49,8 @@ public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackS
       fragmentTransaction.add(R.id.layoutFragment01, threeFragment, TAG_THREE);
     } else if (tab.getTag().equals(TAG_FOUR)) {
       fragmentTransaction.add(R.id.layoutFragment01, fourFragment, TAG_FOUR);
+    } else if (tab.getTag().equals(TAG_FIVE)) {
+      fragmentTransaction.add(R.id.layoutFragment01, fiveFragment, TAG_FIVE);
     } else {
       throw new IllegalArgumentException("unknown tab:" + tab.getTag());
     }
@@ -72,6 +75,8 @@ public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackS
       fragmentTransaction.remove(threeFragment);
     } else if (tab.getTag().equals(TAG_FOUR)) {
       fragmentTransaction.remove(fourFragment);
+    } else if (tab.getTag().equals(TAG_FIVE)) {
+      fragmentTransaction.remove(fiveFragment);
     } else {
       throw new IllegalArgumentException("unknown tab:" + tab.getTag());
     }
@@ -95,6 +100,8 @@ public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackS
     } else if (tab.getTag().equals(TAG_THREE)) {
       //empty
     } else if (tab.getTag().equals(TAG_FOUR)) {
+      //empty
+    } else if (tab.getTag().equals(TAG_FIVE)) {
       //empty
     } else {
       throw new IllegalArgumentException("unknown tab:" + tab.getTag());
@@ -126,26 +133,31 @@ public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackS
     twoTab = actionBar.newTab();
     threeTab = actionBar.newTab();
     fourTab = actionBar.newTab();
+    fiveTab = actionBar.newTab();
 
     oneTab.setTabListener(this);
     twoTab.setTabListener(this);
     threeTab.setTabListener(this);
     fourTab.setTabListener(this);
+    fiveTab.setTabListener(this);
 
     oneTab.setTag(TAG_ONE);
     twoTab.setTag(TAG_TWO);
     threeTab.setTag(TAG_THREE);
     fourTab.setTag(TAG_FOUR);
+    fiveTab.setTag(TAG_FIVE);
 
     oneTab.setText(R.string.menu_application_bar_one);
     twoTab.setText(R.string.menu_application_bar_two);
     threeTab.setText(R.string.menu_application_bar_three);
     fourTab.setText(R.string.menu_application_bar_four);
+    fiveTab.setText(R.string.menu_application_bar_five);
 
     actionBar.addTab(oneTab);
     actionBar.addTab(twoTab);
     actionBar.addTab(threeTab);
     actionBar.addTab(fourTab);
+    actionBar.addTab(fiveTab);
 
     LogFacade.exit(LOG_TAG, "initialize");
   }
@@ -164,6 +176,8 @@ public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackS
       return(threeTab);
     } else if (arg.equals(TAG_FOUR)) {
       return(fourTab);
+    } else if (arg.equals(TAG_FIVE)) {
+      return(fiveTab);
     }
 
     throw new IllegalArgumentException("unsupported tag:" + arg);
@@ -201,6 +215,8 @@ public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackS
       fragmentTransaction.remove(threeFragment);
     } else if (tabTag.equals(TAG_FOUR)) {
       fragmentTransaction.remove(fourFragment);
+    } else if (tabTag.equals(TAG_FIVE)) {
+      fragmentTransaction.remove(fiveFragment);
     }
 
     fragmentTransaction.add(R.id.layoutFragment01, stateDetailFragment, TAG_STATE_DETAIL);
@@ -222,12 +238,14 @@ public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackS
   private ActionBar.Tab twoTab;
   private ActionBar.Tab threeTab;
   private ActionBar.Tab fourTab;
+  private ActionBar.Tab fiveTab;
 
   //
   private final OneFragment oneFragment;
   private final TwoFragment twoFragment;
   private final ThreeFragment threeFragment;
   private final FourFragment fourFragment;
+  private final FiveFragment fiveFragment;
 
   private StateDetailFragment stateDetailFragment;
 
@@ -239,6 +257,7 @@ public class TabHelper implements ActionBar.TabListener, FragmentManager.OnBackS
   public static final String TAG_TWO = "TAG_TWO";
   public static final String TAG_THREE = "TAG_THREE";
   public static final String TAG_FOUR = "TAG_FOUR";
+  public static final String TAG_FIVE = "TAG_FIVE";
 
   public static final String TAG_STATE_DETAIL = "TAG_STATE_DETAIL";
 
