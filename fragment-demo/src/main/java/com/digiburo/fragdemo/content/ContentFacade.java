@@ -16,49 +16,6 @@ public class ContentFacade {
 
   /**
    *
-   * @param selection
-   * @param selectionArgs
-   * @param table
-   * @param model
-   * @param context
-   * @return
-   */
-  /*
-  private boolean simpleSelect(String selection, String[] selectionArgs, DataBaseTableIf table, DataBaseModelIf model, Context context) {
-    String[] projection = table.getDefaultProjection();
-    String sortOrder = table.getDefaultSortOrder();
-
-    model.setDefault();
-
-    boolean status = false;
-    Cursor cursor = null;
-
-    try {
-      cursor = context.getContentResolver().query(model.getTableUri(), projection, selection, selectionArgs, sortOrder);
-
-      if (cursor.moveToFirst()) {
-        //success
-        model.fromCursor(cursor);
-        status = true;
-      } else {
-        //failure
-        model.setId(0L);
-        LogFacade.debug(LOG_TAG, "select failure");
-      }
-    } catch(SQLException exception) {
-      LogFacade.error(LOG_TAG, exception);
-    } finally {
-      if (cursor != null) {
-        cursor.close();
-      }
-    }
-
-    return(status);
-  }
-  */
-
-  /**
-   *
    * @param context
    * @return
    */

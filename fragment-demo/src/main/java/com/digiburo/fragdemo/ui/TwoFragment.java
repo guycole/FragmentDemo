@@ -60,9 +60,7 @@ public class TwoFragment extends ListFragment {
   public boolean onContextItemSelected(MenuItem item) {
     AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
     LogFacade.entry(LOG_TAG, "on context item select:" + item + ":" + info.id + ":" + arrayAdapter.getItem(info.position));
-
     twoListener.createStateDeleteDialog(R.string.alert_delete_title, R.string.alert_delete_message);
-
     return super.onContextItemSelected(item);
   }
 
@@ -152,7 +150,7 @@ public class TwoFragment extends ListFragment {
   //
   private ArrayAdapter<CharSequence> arrayAdapter;
 
-  // handle delete dialog and transition events between selected item and detail
+  // transition events between selected item and detail
   private TwoListener twoListener;
 
   // true, returning from detail fragment

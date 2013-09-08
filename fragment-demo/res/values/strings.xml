@@ -28,6 +28,8 @@
 
   <string name="hint_comment">Comment</string>
 
+  <string name="label_activity_five">Activity Five</string>
+
   <string name="label_fragment_one">Fragment One</string>
   <string name="label_fragment_two">Fragment Two</string>
   <string name="label_fragment_three">Fragment Three</string>

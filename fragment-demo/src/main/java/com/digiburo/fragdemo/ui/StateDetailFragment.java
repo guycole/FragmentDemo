@@ -2,10 +2,13 @@ package com.digiburo.fragdemo.ui;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.digiburo.fragdemo.R;
@@ -58,6 +61,26 @@ public class StateDetailFragment extends Fragment {
     LogFacade.entry(LOG_TAG, "onActivityCreated");
 
     tvName = (TextView) getActivity().findViewById(R.id.detail_name01);
+
+    Button cancelButton = (Button) getActivity().findViewById(R.id.button_cancel01);
+    cancelButton.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View view) {
+        LogFacade.debug(LOG_TAG, "cancel button");
+        // do some work
+        FragmentManager fragmentManager = getActivity().getFragmentManager();
+        fragmentManager.popBackStack();
+      }
+    });
+
+    Button saveButton = (Button) getActivity().findViewById(R.id.button_save01);
+    saveButton.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View view) {
+        LogFacade.debug(LOG_TAG, "save button");
+        // do some work
+        FragmentManager fragmentManager = getActivity().getFragmentManager();
+        fragmentManager.popBackStack();
+      }
+    });
   }
 
   @Override

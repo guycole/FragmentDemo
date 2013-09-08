@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ListFragment;
 import android.app.LoaderManager;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -71,6 +72,21 @@ public class FiveFragment extends ListFragment implements LoaderManager.LoaderCa
   @Override
   public void onListItemClick(ListView listView, View view, int position, long id) {
     LogFacade.debug(LOG_TAG, "click:" + position + ":" + id);
+
+    Intent intent = new Intent(getActivity(), FiveActivity.class);
+    startActivityForResult(intent, REQUEST_CODE);
+  }
+
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+    LogFacade.debug(LOG_TAG, "onActivityResult:" + requestCode + ":" + resultCode);
+    super.onActivityResult(requestCode, resultCode, intent);
+
+    if (resultCode == Activity.RESULT_CANCELED) {
+      LogFacade.debug(LOG_TAG, "cancel noted");
+    } else if (resultCode == Activity.RESULT_OK) {
+      LogFacade.debug(LOG_TAG, "ok noted");
+    }
   }
 
   /**
@@ -168,6 +184,9 @@ public class FiveFragment extends ListFragment implements LoaderManager.LoaderCa
 
   //
   public static final int LOADER_ID = 271828;
+
+  //
+  public static final int REQUEST_CODE = 314156;
 
   //
   public static final String LOG_TAG = FiveFragment.class.getName();
